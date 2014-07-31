@@ -1,0 +1,356 @@
+24 Jul 2014 00:53:58,627   INFO DesktopTranscoder.App.start(App.java:17) - ---------------------------------------------------------------------
+24 Jul 2014 00:53:58,633   INFO DesktopTranscoder.App.start(App.java:18) - -------------------- App started ------------------------------------
+24 Jul 2014 00:53:58,635   INFO DesktopTranscoder.App.start(App.java:19) - ---------------------------------------------------------------------
+24 Jul 2014 00:53:59,161   INFO org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@88dd83: startup date [Thu Jul 24 00:53:59 IST 2014]; root of context hierarchy
+24 Jul 2014 00:53:59,304   INFO org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [SpringBeans.xml]
+24 Jul 2014 00:53:59,901   INFO org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from class path resource [config.properties]
+24 Jul 2014 00:53:59,907   INFO org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:598) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@24df87: defining beans [propertyConfigurator,appConfig]; root of factory hierarchy
+24 Jul 2014 00:54:01,490   INFO com.aurusnet.coursehub.login.LoginController.setDefaultloginCreadentials(LoginController.java:128) - credentials does not exist
+24 Jul 2014 00:54:26,612   INFO com.aurusnet.coursehub.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=http://api.coursehub.tv/desktopTranscoder/login, params=[domain=new.coursehub.tv, userName=admin, password=admin]
+24 Jul 2014 00:54:27,928   INFO com.aurusnet.coursehub.login.LoginController.handleSubmitButtonAction(LoginController.java:157) - login response{"success":true,"response":null,"courses":{"Base Test":"7017","tab 3 hr":"6666","desktop streamer":"5626","DC":"5619","android + desktop streamer test final - dheeraj":"5618","html test":"4348","Schedule test":"1207","Encoder Test":"2423","android new tests":"1430","new transcoder test":"1326","NST":"1206","New test":"1005","Schedule Test 3":"1004","Schedule Test 2":"1003","Schedule Test":"1002","Encoder Final Launch":"998","New_encoder_tests":"427","DT Test":"425","Lokesh":"169","Aurus Testing":"47","dheeraj":"46","Piyush's Course":"45","ayyappa_test":"5","Anirban-Demo":"4","Test By Sujeet":"3"},"ftpUserName":"1_lthtqwjwjwsmjff","ftpPassword":"0E8wD9HI","userId":"1","ftpServer":"new.coursehub.tv"}
+24 Jul 2014 00:54:28,147  ERROR com.aurusnet.coursehub.login.LoginController.saveCredentials(LoginController.java:143) - Error saving credentialsC:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\credentials.txt (The system cannot find the path specified)
+24 Jul 2014 00:54:28,355   INFO com.j256.ormlite.logger.Slf4jLoggingLog.log(Slf4jLoggingLog.java:44) - creating table 'UploadJob'
+24 Jul 2014 00:54:28,380  ERROR com.aurusnet.coursehub.db.DbHelper.createTablesIfNotExists(DbHelper.java:67) - Caught SQLException java.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+24 Jul 2014 00:54:28,418  ERROR com.aurusnet.coursehub.db.UploadJobHelper.findUploadJobByField(UploadJobHelper.java:60) - Caught Sql Exceptionjava.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+24 Jul 2014 00:54:28,418  ERROR com.aurusnet.coursehub.db.UploadJobHelper.findUploadJobByField(UploadJobHelper.java:60) - Caught Sql Exceptionjava.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+24 Jul 2014 00:54:28,660   INFO com.aurusnet.coursehub.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=http://api.coursehub.tv/desktopTranscoder/checkUpdate, params=[name=name]
+24 Jul 2014 00:54:28,763   INFO com.aurusnet.coursehub.transcoder.TranscoderController.redirectHome(TranscoderController.java:237) - check update response{"enabled":true,"version":"2.1","downloadUrl":"http:\/\/get.coursehub.tv\/expressMediaUploader\/update-2.1.zip"}
+24 Jul 2014 00:54:28,766   INFO com.aurusnet.coursehub.transcoder.TranscoderController.redirectHome(TranscoderController.java:247) - changing status of all upload jobs from running to pending
+24 Jul 2014 00:54:28,769  ERROR com.aurusnet.coursehub.db.UploadJobHelper.updateUploadJobStatus(UploadJobHelper.java:96) - Caught SQL Exceptionjava.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+24 Jul 2014 00:54:28,771  ERROR com.aurusnet.coursehub.db.UploadJobHelper.getNumUploadJobsPending(UploadJobHelper.java:122) - caught sql exception java.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+24 Jul 2014 00:54:36,166   INFO DesktopTranscoder.App.stop(App.java:27) - Window Closed ,stopping running session
+24 Jul 2014 00:54:36,169   INFO com.aurusnet.coursehub.transcoder.TranscoderController.deleteGarbageLectures(TranscoderController.java:510) - DELETE UNFINISHED LECTURES 
+24 Jul 2014 00:54:36,193   INFO com.aurusnet.coursehub.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=http://api.coursehub.tv/desktopTranscoder/deleteUnfinishedLectures, params=[sessionIdList=[]]
+24 Jul 2014 00:54:36,293   INFO com.aurusnet.coursehub.transcoder.TranscoderController.deleteGarbageLectures(TranscoderController.java:520) - Delete unfinished lectures reply{"success":true}
+24 Jul 2014 00:54:36,293   INFO com.aurusnet.coursehub.transcoder.TranscoderController.onWindowClosed(TranscoderController.java:527) - calling handle stop button because window is closed
+24 Jul 2014 00:54:36,293   INFO com.aurusnet.coursehub.transcoder.TranscoderController.onWindowClosed(TranscoderController.java:541) - killing ftp uploader runnable
+24 Jul 2014 00:54:36,293   INFO com.aurusnet.coursehub.transcoder.TranscoderController.onWindowClosed(TranscoderController.java:547) - kill uploader service
+24 Jul 2014 00:54:36,294   INFO com.aurusnet.coursehub.transcoder.TranscoderController.onWindowClosed(TranscoderController.java:550) - updater service killed successfully
+24 Jul 2014 00:54:36,294   INFO com.aurusnet.coursehub.transcoder.TranscoderController.onWindowClosed(TranscoderController.java:555) - closing stage
+24 Jul 2014 00:54:36,294   INFO com.aurusnet.coursehub.transcoder.TranscoderController.onWindowClosed(TranscoderController.java:567) - killing all ffmpeg threads
+24 Jul 2014 00:54:36,319   INFO DesktopTranscoder.App.stop(App.java:29) - ---------------------------------------------------------------------
+24 Jul 2014 00:54:36,320   INFO DesktopTranscoder.App.stop(App.java:30) - -------------------- App stopped ------------------------------------
+24 Jul 2014 00:54:36,320   INFO DesktopTranscoder.App.stop(App.java:31) - ---------------------------------------------------------------------
+29 Jul 2014 12:35:58,844   INFO DesktopTranscoder.App.start(App.java:17) - ---------------------------------------------------------------------
+29 Jul 2014 12:35:58,862   INFO DesktopTranscoder.App.start(App.java:18) - -------------------- App started ------------------------------------
+29 Jul 2014 12:35:58,872   INFO DesktopTranscoder.App.start(App.java:19) - ---------------------------------------------------------------------
+29 Jul 2014 12:35:59,495   INFO org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1662529: startup date [Tue Jul 29 12:35:59 IST 2014]; root of context hierarchy
+29 Jul 2014 12:35:59,625   INFO org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [SpringBeans.xml]
+29 Jul 2014 12:36:00,182   INFO org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from class path resource [config.properties]
+29 Jul 2014 12:36:00,219   INFO org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:598) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@46692c: defining beans [propertyConfigurator,appConfig]; root of factory hierarchy
+29 Jul 2014 12:36:01,742   INFO com.aurusnet.coursehub.login.LoginController.setDefaultloginCreadentials(LoginController.java:128) - credentials does not exist
+29 Jul 2014 12:44:13,299   INFO com.aurusnet.coursehub.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=http://api.coursehub.tv/desktopTranscoder/login, params=[domain=new.couersehub.tv, userName=admin, password=admin]
+29 Jul 2014 12:44:15,525   INFO com.aurusnet.coursehub.login.LoginController.handleSubmitButtonAction(LoginController.java:157) - login response{"success":false,"response":"Invalid SiteUrl - new.couersehub.tv","courses":null,"ftpUserName":null,"ftpPassword":null,"userId":null,"ftpServer":null}
+29 Jul 2014 12:44:20,705   INFO com.aurusnet.coursehub.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=http://api.coursehub.tv/desktopTranscoder/login, params=[domain=new.coursehub.tv, userName=admin, password=admin]
+29 Jul 2014 12:44:20,857   INFO com.aurusnet.coursehub.login.LoginController.handleSubmitButtonAction(LoginController.java:157) - login response{"success":true,"response":null,"courses":{"Base Test":"7017","tab 3 hr":"6666","desktop streamer":"5626","DC":"5619","android + desktop streamer test final - dheeraj":"5618","html test":"4348","Schedule test":"1207","Encoder Test":"2423","android new tests":"1430","new transcoder test":"1326","NST":"1206","New test":"1005","Schedule Test 3":"1004","Schedule Test 2":"1003","Schedule Test":"1002","Encoder Final Launch":"998","New_encoder_tests":"427","DT Test":"425","Lokesh":"169","Aurus Testing":"47","dheeraj":"46","Piyush's Course":"45","ayyappa_test":"5","Anirban-Demo":"4","Test By Sujeet":"3"},"ftpUserName":"1_lthtqwjwjwsmjff","ftpPassword":"0E8wD9HI","userId":"1","ftpServer":"new.coursehub.tv"}
+29 Jul 2014 12:44:20,860  ERROR com.aurusnet.coursehub.login.LoginController.saveCredentials(LoginController.java:143) - Error saving credentialsC:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\credentials.txt (The system cannot find the path specified)
+29 Jul 2014 12:44:21,086   INFO com.j256.ormlite.logger.Slf4jLoggingLog.log(Slf4jLoggingLog.java:44) - creating table 'UploadJob'
+29 Jul 2014 12:44:21,109  ERROR com.aurusnet.coursehub.db.DbHelper.createTablesIfNotExists(DbHelper.java:67) - Caught SQLException java.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+29 Jul 2014 12:44:21,132  ERROR com.aurusnet.coursehub.db.UploadJobHelper.findUploadJobByField(UploadJobHelper.java:60) - Caught Sql Exceptionjava.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+29 Jul 2014 12:44:21,133  ERROR com.aurusnet.coursehub.db.UploadJobHelper.findUploadJobByField(UploadJobHelper.java:60) - Caught Sql Exceptionjava.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+29 Jul 2014 12:44:21,374   INFO com.aurusnet.coursehub.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=http://api.coursehub.tv/desktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 12:44:21,501   INFO com.aurusnet.coursehub.transcoder.TranscoderController.redirectHome(TranscoderController.java:237) - check update response{"enabled":true,"version":"2.1","downloadUrl":"http:\/\/get.coursehub.tv\/expressMediaUploader\/update-2.1.zip"}
+29 Jul 2014 12:44:21,525   INFO com.aurusnet.coursehub.transcoder.TranscoderController.redirectHome(TranscoderController.java:247) - changing status of all upload jobs from running to pending
+29 Jul 2014 12:44:21,528  ERROR com.aurusnet.coursehub.db.UploadJobHelper.updateUploadJobStatus(UploadJobHelper.java:96) - Caught SQL Exceptionjava.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+29 Jul 2014 12:44:21,530  ERROR com.aurusnet.coursehub.db.UploadJobHelper.getNumUploadJobsPending(UploadJobHelper.java:122) - caught sql exception java.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+29 Jul 2014 12:44:31,178  ERROR com.aurusnet.coursehub.db.UploadJobHelper.findUploadJobByField(UploadJobHelper.java:60) - Caught Sql Exceptionjava.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+29 Jul 2014 12:44:31,179  ERROR com.aurusnet.coursehub.db.UploadJobHelper.findUploadJobByField(UploadJobHelper.java:60) - Caught Sql Exceptionjava.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+29 Jul 2014 12:44:41,180  ERROR com.aurusnet.coursehub.db.UploadJobHelper.findUploadJobByField(UploadJobHelper.java:60) - Caught Sql Exceptionjava.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+29 Jul 2014 12:44:41,180  ERROR com.aurusnet.coursehub.db.UploadJobHelper.findUploadJobByField(UploadJobHelper.java:60) - Caught Sql Exceptionjava.sql.SQLException: path to 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader\data\com.aurusnet.coursehub.db': 'C:\Program Files\Common Files\Aurus Network\ExpressMediaUploader' does not exist
+29 Jul 2014 12:44:43,676   INFO DesktopTranscoder.App.stop(App.java:27) - Window Closed ,stopping running session
+29 Jul 2014 12:44:43,679   INFO com.aurusnet.coursehub.transcoder.TranscoderController.deleteGarbageLectures(TranscoderController.java:510) - DELETE UNFINISHED LECTURES 
+29 Jul 2014 12:44:43,708   INFO com.aurusnet.coursehub.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=http://api.coursehub.tv/desktopTranscoder/deleteUnfinishedLectures, params=[sessionIdList=[]]
+29 Jul 2014 12:44:43,809   INFO com.aurusnet.coursehub.transcoder.TranscoderController.deleteGarbageLectures(TranscoderController.java:520) - Delete unfinished lectures reply{"success":true}
+29 Jul 2014 12:44:43,809   INFO com.aurusnet.coursehub.transcoder.TranscoderController.onWindowClosed(TranscoderController.java:527) - calling handle stop button because window is closed
+29 Jul 2014 12:44:43,810   INFO com.aurusnet.coursehub.transcoder.TranscoderController.onWindowClosed(TranscoderController.java:541) - killing ftp uploader runnable
+29 Jul 2014 12:44:43,810   INFO com.aurusnet.coursehub.transcoder.TranscoderController.onWindowClosed(TranscoderController.java:547) - kill uploader service
+29 Jul 2014 12:44:43,811   INFO com.aurusnet.coursehub.transcoder.TranscoderController.onWindowClosed(TranscoderController.java:550) - updater service killed successfully
+29 Jul 2014 12:44:43,811   INFO com.aurusnet.coursehub.transcoder.TranscoderController.onWindowClosed(TranscoderController.java:555) - closing stage
+29 Jul 2014 12:44:43,811   INFO com.aurusnet.coursehub.transcoder.TranscoderController.onWindowClosed(TranscoderController.java:567) - killing all ffmpeg threads
+29 Jul 2014 12:44:43,845   INFO DesktopTranscoder.App.stop(App.java:29) - ---------------------------------------------------------------------
+29 Jul 2014 12:44:43,846   INFO DesktopTranscoder.App.stop(App.java:30) - -------------------- App stopped ------------------------------------
+29 Jul 2014 12:44:43,846   INFO DesktopTranscoder.App.stop(App.java:31) - ---------------------------------------------------------------------
+29 Jul 2014 17:42:38,057   INFO DesktopTranscoder.App.start(App.java:17) - ---------------------------------------------------------------------
+29 Jul 2014 17:42:38,082   INFO DesktopTranscoder.App.start(App.java:18) - -------------------- App started ------------------------------------
+29 Jul 2014 17:42:38,083   INFO DesktopTranscoder.App.start(App.java:19) - ---------------------------------------------------------------------
+29 Jul 2014 17:42:38,711   INFO org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@88dd83: startup date [Tue Jul 29 17:42:38 IST 2014]; root of context hierarchy
+29 Jul 2014 17:42:38,833   INFO org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from class path resource [SpringBeans.xml]
+29 Jul 2014 17:42:39,316   INFO org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172) - Loading properties file from class path resource [config.properties]
+29 Jul 2014 17:42:39,324   INFO org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:598) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@24df87: defining beans [propertyConfigurator,appConfig]; root of factory hierarchy
+29 Jul 2014 17:42:40,056   INFO com.aurusnet.coursehub.login.LoginController.setDefaultloginCreadentials(LoginController.java:128) - credentials does not exist
+29 Jul 2014 17:42:45,427   INFO DesktopTranscoder.App.stop(App.java:27) - Window Closed ,stopping running session
+29 Jul 2014 17:42:45,428   INFO DesktopTranscoder.App.stop(App.java:29) - ---------------------------------------------------------------------
+29 Jul 2014 17:42:45,428   INFO DesktopTranscoder.App.stop(App.java:30) - -------------------- App stopped ------------------------------------
+29 Jul 2014 17:42:45,428   INFO DesktopTranscoder.App.stop(App.java:31) - ---------------------------------------------------------------------
+29 Jul 2014 18:09:26,160   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:09:26,196   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:09:26,201   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:09:26,365   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:09:26,401   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:09:26,401   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:09:26,402   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:10:28,808   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:10:28,811   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:10:28,812   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:10:29,289   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:10:29,296   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:10:29,296   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:10:29,296   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:10:52,554   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:10:52,556   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:10:52,558   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:10:52,966   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:10:53,504  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:10:53,505   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:193) - check update responsenull
+29 Jul 2014 18:10:53,945   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:10:53,953   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:10:53,953   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:10:53,953   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:11:09,805   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:11:09,807   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:11:09,808   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:11:10,217   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:11:10,390  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:11:10,390   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:193) - check update responsenull
+29 Jul 2014 18:11:39,564   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:11:39,583   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:11:39,583   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:11:39,583   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:12:30,503   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:12:30,505   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:12:30,506   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:12:30,918   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:12:31,094  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:12:31,094   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:193) - check update responsenull
+29 Jul 2014 18:12:38,245   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:12:38,280   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:12:38,280   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:12:38,280   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:13:46,118   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:13:46,120   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:13:46,122   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:13:46,534   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:13:46,705  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:13:46,706   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:193) - check update responsenull
+29 Jul 2014 18:14:28,209   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:14:28,229   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:14:28,230   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:14:28,230   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:15:51,938   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:15:51,940   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:15:51,940   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:15:52,262   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:15:52,424  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:15:52,424   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:193) - check update responsenull
+29 Jul 2014 18:15:55,266   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:15:55,289   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:15:55,289   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:15:55,289   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:16:00,756   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:16:00,758   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:16:00,760   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:16:01,165   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:16:01,335  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:16:01,336   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:193) - check update responsenull
+29 Jul 2014 18:16:26,956   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:16:26,972   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:16:26,972   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:16:26,972   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:34:03,406   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:34:03,407   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:34:03,408   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:34:03,730   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:34:03,885  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:34:03,885   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:178) - check update responsenull
+29 Jul 2014 18:34:44,344   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:34:44,358   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:34:44,358   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:34:44,359   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:34:55,122   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:34:55,124   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:34:55,126   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:34:55,524   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:34:55,696  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:34:55,697   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:178) - check update responsenull
+29 Jul 2014 18:34:55,699   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:34:55,706   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:34:55,706   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:34:55,706   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:05,340   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:05,342   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:35:05,344   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:05,737   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:35:05,910  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:35:05,910   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:178) - check update responsenull
+29 Jul 2014 18:35:06,243   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:35:06,251   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:06,251   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:35:06,251   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:14,673   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:14,675   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:35:14,676   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:15,064   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:35:15,236  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:35:15,237   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:178) - check update responsenull
+29 Jul 2014 18:35:20,526   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:35:20,545   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:20,546   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:35:20,546   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:27,756   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:27,758   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:35:27,759   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:28,155   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:35:28,327  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:35:28,327   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:178) - check update responsenull
+29 Jul 2014 18:35:40,385   INFO np.dheeraj.sachan.transcoder.TranscoderController.selectPrimaryVideo(TranscoderController.java:422) - Caught exception null
+29 Jul 2014 18:35:43,847   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:35:43,860   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:43,860   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:35:43,860   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:55,471   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:55,473   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:35:55,475   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:55,844   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:35:56,015  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:35:56,016   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:178) - check update responsenull
+29 Jul 2014 18:35:56,017   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:35:56,024   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:35:56,025   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:35:56,025   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:06,068   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:06,070   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:36:06,070   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:06,383   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:36:06,530  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:36:06,531   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:178) - check update responsenull
+29 Jul 2014 18:36:06,804   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:36:06,817   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:06,817   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:36:06,817   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:07,143   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:07,145   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:36:07,147   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:07,524   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:36:07,697  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:36:07,697   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:178) - check update responsenull
+29 Jul 2014 18:36:08,011   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:36:08,028   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:08,028   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:36:08,028   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:23,819   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:23,821   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:36:23,823   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:24,194   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:36:24,367  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:36:24,367   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:178) - check update responsenull
+29 Jul 2014 18:36:24,679   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:36:24,695   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:24,695   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:36:24,695   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:35,852   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:35,854   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:36:35,856   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:36,226   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:36:36,400  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:36:36,400   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:178) - check update responsenull
+29 Jul 2014 18:36:55,206   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:36:55,226   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:36:55,226   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:36:55,226   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:38:20,649   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:38:20,651   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:38:20,653   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:38:21,002   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:38:21,177  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:38:21,178   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:178) - check update responsenull
+29 Jul 2014 18:38:33,717   INFO np.dheeraj.sachan.transcoder.TranscoderController.onForceAddEvent(TranscoderController.java:439) - Force add Primary file nameC:\Users\windows 7\.IntelliJIdea12\system\compiler\aurusupdaterservice.4e3d6818\rebuild_required
+29 Jul 2014 18:38:56,131   INFO np.dheeraj.sachan.transcoder.TranscoderController.selectPrimaryVideo(TranscoderController.java:389) - Primary file nameC:\Users\windows 7\Downloads\UFC.174.14th.June.2014.HDTV.x264-Sir.Paul.mp4
+29 Jul 2014 18:39:05,366   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:39:05,368   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:39:05,368   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:39:05,369   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:49:33,470   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:49:33,472   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:49:33,473   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:49:33,790   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:49:33,798   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:49:33,798   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:49:33,798   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:49:47,236   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:49:47,238   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:49:47,239   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:49:47,549   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:49:47,556   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:49:47,556   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:49:47,556   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:49:56,884   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:49:56,886   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:49:56,888   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:49:57,192   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:49:57,199   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:49:57,199   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:49:57,199   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:03,275   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:03,277   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:50:03,279   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:03,589   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:50:03,597   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:03,597   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:50:03,597   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:12,335   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:12,337   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:50:12,338   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:12,644   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:50:12,651   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:12,651   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:50:12,651   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:20,798   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:20,800   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:50:20,802   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:21,116   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:50:21,286  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:50:21,286   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:171) - check update responsenull
+29 Jul 2014 18:50:21,288   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:50:21,295   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:21,295   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:50:21,296   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:30,750   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:30,752   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:50:30,754   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:31,065   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:50:31,237  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:50:31,237   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:171) - check update responsenull
+29 Jul 2014 18:50:32,968   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:50:32,984   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:50:32,984   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:50:32,984   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:51:05,463   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:51:05,465   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:51:05,467   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:51:05,812   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:51:05,819   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:51:05,819   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:51:05,819   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+29 Jul 2014 18:51:13,816   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+29 Jul 2014 18:51:13,818   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+29 Jul 2014 18:51:13,819   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+29 Jul 2014 18:51:14,170   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+29 Jul 2014 18:51:14,344  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+29 Jul 2014 18:51:14,344   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:169) - check update responsenull
+29 Jul 2014 18:51:30,846   INFO np.dheeraj.sachan.transcoder.TranscoderController.selectPrimaryVideo(TranscoderController.java:285) - Primary file nameA:\y1b\Fantasy HD 14.07.14 Connie Carter - Close shave.mp4
+29 Jul 2014 18:51:33,406   INFO np.dheeraj.sachan.transcoder.TranscoderController.addInQueue(TranscoderController.java:242) - Task successfully added in queue
+29 Jul 2014 18:51:37,251   INFO np.dheeraj.sachan.transcoder.TranscoderController.addInQueue(TranscoderController.java:242) - Task successfully added in queue
+29 Jul 2014 18:51:43,051   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+29 Jul 2014 18:51:43,067   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+29 Jul 2014 18:51:43,067   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+29 Jul 2014 18:51:43,068   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------
+31 Jul 2014 20:58:48,359   INFO DesktopTranscoder.App.start(App.java:16) - ---------------------------------------------------------------------
+31 Jul 2014 20:58:48,361   INFO DesktopTranscoder.App.start(App.java:17) - -------------------- App started ------------------------------------
+31 Jul 2014 20:58:48,362   INFO DesktopTranscoder.App.start(App.java:18) - ---------------------------------------------------------------------
+31 Jul 2014 20:58:48,791   INFO np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:66) - sending post reqeust=nulldesktopTranscoder/checkUpdate, params=[name=name]
+31 Jul 2014 20:58:49,278  ERROR np.dheeraj.sachan.helper.HttpAgent.post(HttpAgent.java:76) - Target host must not be null, or set in parameters.
+31 Jul 2014 20:58:49,278   INFO np.dheeraj.sachan.transcoder.TranscoderController.redirectHome(TranscoderController.java:169) - check update responsenull
+31 Jul 2014 20:58:52,925   INFO DesktopTranscoder.App.stop(App.java:26) - Window Closed ,stopping running session
+31 Jul 2014 20:58:52,938   INFO DesktopTranscoder.App.stop(App.java:28) - ---------------------------------------------------------------------
+31 Jul 2014 20:58:52,938   INFO DesktopTranscoder.App.stop(App.java:29) - -------------------- App stopped ------------------------------------
+31 Jul 2014 20:58:52,939   INFO DesktopTranscoder.App.stop(App.java:30) - ---------------------------------------------------------------------

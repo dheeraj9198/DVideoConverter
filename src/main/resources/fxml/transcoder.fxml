@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<GridPane alignment="CENTER" hgap="10.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+    <!-- <Text fx:id="welcomeText" text="home" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+ -->
+
+    <ImageView id="boxImage" fitHeight="70.0" fitWidth="120.0" GridPane.columnIndex="3" GridPane.rowIndex="0"
+               GridPane.rowSpan="3" GridPane.columnSpan="1">
+        <image>
+            <Image url="@np1.png"/>
+        </image>
+    </ImageView>
+
+    <Label text="Select File" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <Button fx:id="selectPrimaryVideoButton" onAction="#selectPrimaryVideo" GridPane.columnIndex="1"
+            GridPane.rowIndex="4"
+            prefWidth="120.0" maxWidth="120.0"/>
+
+    <Label text="Select Frame Size " GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+    <ComboBox fx:id="primaryFrameSizeComboBox" GridPane.columnIndex="3" GridPane.rowIndex="4" prefWidth="120.0"
+              maxWidth="120.0"/>
+
+    <Label text="Select Video Bitrate " GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <ComboBox fx:id="primaryVideoBitrateComboBox" GridPane.columnIndex="1" GridPane.rowIndex="5" prefWidth="120.0"
+              maxWidth="120.0"/>
+
+    <Label text="Select Audio Bitrate " GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+    <ComboBox fx:id="primaryAudioBitrateComboBox" GridPane.columnIndex="3" GridPane.rowIndex="5" prefWidth="120.0"
+              maxWidth="120.0"/>
+
+
+    <Label text="Click to add in queue" GridPane.columnIndex="0" GridPane.rowIndex="9"
+           prefWidth="120.0"
+           maxWidth="120.0"/>
+
+    <Button fx:id="addInQueueButton" onAction="#addInQueue" GridPane.columnSpan="1" GridPane.rowIndex="9"  GridPane.columnIndex="1"
+            text="Add in queue" prefWidth="120.0" maxWidth="120"/>
+
+    <Label text="Total queue size" GridPane.columnIndex="2" GridPane.rowIndex="9"
+           prefWidth="120.0"
+           maxWidth="120.0"/>
+    <Text fx:id="totalInQueueText" GridPane.columnIndex="3"  GridPane.rowIndex="9"/>
+
+    <Label text="Remove from queue" GridPane.columnIndex="0" GridPane.rowIndex="10" GridPane.columnSpan="1"
+           prefWidth="120.0"
+           maxWidth="120.0"/>
+
+    <ComboBox fx:id="lectureListComboBox" GridPane.columnIndex="1" GridPane.rowIndex="10" GridPane.columnSpan="2"
+              prefWidth="240.0" maxWidth="240.0">
+    </ComboBox>
+
+    <HBox alignment="BOTTOM_LEFT" GridPane.columnIndex="3" GridPane.rowIndex="10">
+        <Button fx:id="removeFromQueueButton" onAction="#removeFromQueue" text="Remove lecture" prefWidth="120.0"/>
+    </HBox>
+
+    <Label text="COMPRESS VIDEO" style="-fx-text-fill:red" GridPane.columnIndex="0" GridPane.rowIndex="11"
+           prefWidth="120.0" maxWidth="120.0">
+        <font>
+            <Font name="Verdana" size="12.0"/>
+        </font>
+    </Label>
+    <Button fx:id="startButton" onAction="#handleStartButtonAction" text="Start Process" GridPane.columnIndex="2"
+            GridPane.rowIndex="11" prefWidth="110.0" maxWidth="110" GridPane.columnSpan="1"/>
+
+    <Button fx:id="stopButton" onAction="#handleStopButtonAction" text="Stop Process" GridPane.columnIndex="3"
+            GridPane.rowIndex="11" prefWidth="120.0" maxWidth="120"/>
+
+    <Label text="Compresssion Status" GridPane.columnIndex="0" GridPane.rowIndex="12"/>
+    <ProgressBar fx:id="transcodeProgressBar" GridPane.columnIndex="1" GridPane.rowIndex="12" prefWidth="380.0 "
+                 maxWidth="380.0" GridPane.columnSpan="3"/>
+
+    <Label text="Upload Status" GridPane.columnIndex="0" GridPane.rowIndex="13"/>
+    <ProgressBar fx:id="uploadProgressBar" GridPane.columnIndex="1" GridPane.rowIndex="13" prefWidth="380.0"
+                 maxWidth="380.0" GridPane.columnSpan="3"/>
+
+    <Label fx:id="compressingLabel" GridPane.columnIndex="0" GridPane.rowIndex="14"/>
+    <Text fx:id="compressingFileNameText" GridPane.columnIndex="1" GridPane.rowIndex="14"/>
+
+    <Label fx:id="compressionsPendingLabel" GridPane.columnIndex="2" GridPane.rowIndex="14"/>
+    <Text fx:id="compressionsPendingText" GridPane.columnIndex="3" GridPane.rowIndex="14"/>
+
+    <Label fx:id="uploadingLabel" GridPane.columnIndex="0" GridPane.rowIndex="15"/>
+    <Text fx:id="uploadingFileText" GridPane.columnIndex="1" GridPane.rowIndex="15"/>
+
+    <Label fx:id="uploadsPendingLabel" GridPane.columnIndex="2" GridPane.rowIndex="15"/>
+    <Text fx:id="uploadsPendingText" GridPane.columnIndex="3" GridPane.rowIndex="15"/>
+
+    <Text fx:id="updateText" GridPane.columnIndex="0" GridPane.rowIndex="16"/>
+
+    <Text fx:id="actionTargetText" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="17"/>
+
+</GridPane>
