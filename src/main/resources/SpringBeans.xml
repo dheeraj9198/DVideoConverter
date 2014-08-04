@@ -17,7 +17,7 @@
         </property>
     </bean>
 
-    <bean id="appConfig" class="DesktopTranscoder.AppConfig">
+    <bean id="appConfig" class="VideoConverter.AppConfig">
         <property name="apiUrl" value="${apiUrl}"></property>
         <property name="commonFolder" value="${commonFolder}"></property>
     </bean>

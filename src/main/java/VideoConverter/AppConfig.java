@@ -1,4 +1,4 @@
-package DesktopTranscoder;
+package VideoConverter;
 
 import java.io.File;
 

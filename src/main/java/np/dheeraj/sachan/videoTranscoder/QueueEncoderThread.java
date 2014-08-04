@@ -24,7 +24,7 @@ import java.util.List;
  * Time: 3:17 PM
  * To change this template use File | Settings | File Templates.
  */
-public class QueueEncoderThread extends Thread {
+public class QueueEncoderThread implements Runnable {
     private static final Logger logger = LoggerFactory
             .getLogger(QueueEncoderThread.class);
     private EventBus eventBus;
@@ -36,7 +36,6 @@ public class QueueEncoderThread extends Thread {
     public QueueEncoderThread() {
         this.eventBus = eventBus;
         this.eventBus.register(this);
-        start();
     }
 
     @Subscribe

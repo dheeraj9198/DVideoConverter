@@ -20,7 +20,7 @@
     <ImageView id="boxImage" fitHeight="70.0" fitWidth="120.0" GridPane.columnIndex="3" GridPane.rowIndex="0"
                GridPane.rowSpan="3" GridPane.columnSpan="1">
         <image>
-            <Image url="@np1.png"/>
+            <Image url="@np.png"/>
         </image>
     </ImageView>
 
@@ -58,12 +58,12 @@
            prefWidth="120.0"
            maxWidth="120.0"/>
 
-    <ComboBox fx:id="lectureListComboBox" GridPane.columnIndex="1" GridPane.rowIndex="10" GridPane.columnSpan="2"
+    <ComboBox fx:id="taskListComboBox" GridPane.columnIndex="1" GridPane.rowIndex="10" GridPane.columnSpan="2"
               prefWidth="240.0" maxWidth="240.0">
     </ComboBox>
 
     <HBox alignment="BOTTOM_LEFT" GridPane.columnIndex="3" GridPane.rowIndex="10">
-        <Button fx:id="removeFromQueueButton" onAction="#removeFromQueue" text="Remove lecture" prefWidth="120.0"/>
+        <Button fx:id="removeFromQueueButton" onAction="#removeFromQueue" text="Remove Video" prefWidth="120.0"/>
     </HBox>
 
     <Label text="COMPRESS VIDEO" style="-fx-text-fill:red" GridPane.columnIndex="0" GridPane.rowIndex="11"
@@ -80,10 +80,6 @@
 
     <Label text="Compresssion Status" GridPane.columnIndex="0" GridPane.rowIndex="12"/>
     <ProgressBar fx:id="transcodeProgressBar" GridPane.columnIndex="1" GridPane.rowIndex="12" prefWidth="380.0 "
-                 maxWidth="380.0" GridPane.columnSpan="3"/>
-
-    <Label text="Upload Status" GridPane.columnIndex="0" GridPane.rowIndex="13"/>
-    <ProgressBar fx:id="uploadProgressBar" GridPane.columnIndex="1" GridPane.rowIndex="13" prefWidth="380.0"
                  maxWidth="380.0" GridPane.columnSpan="3"/>
 
     <Label fx:id="compressingLabel" GridPane.columnIndex="0" GridPane.rowIndex="14"/>

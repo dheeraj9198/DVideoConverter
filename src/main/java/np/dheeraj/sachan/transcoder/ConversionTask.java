@@ -14,6 +14,11 @@ public class ConversionTask implements Comparable,Serializable,Cloneable{
     private String videoBitrate;
     private String audioBitrate;
     private String frameSize;
+    private String outPutFolder;
+
+    public String getOutPutFolder() {
+        return outPutFolder;
+    }
 
     public String getFileName() {
         return fileName;
@@ -31,12 +36,13 @@ public class ConversionTask implements Comparable,Serializable,Cloneable{
         return frameSize;
     }
 
-    public ConversionTask(String fileName, String videoBitrate, String audioBitrate, String frameSize) {
+    public ConversionTask(String fileName, String videoBitrate, String audioBitrate, String frameSize,String outPutFolder) {
 
         this.fileName = fileName;
         this.videoBitrate = videoBitrate;
         this.audioBitrate = audioBitrate;
         this.frameSize = frameSize;
+        this.outPutFolder = outPutFolder;
     }
 
     @Override
@@ -46,6 +52,7 @@ public class ConversionTask implements Comparable,Serializable,Cloneable{
                 ", videoBitrate='" + videoBitrate + '\'' +
                 ", audioBitrate='" + audioBitrate + '\'' +
                 ", frameSize='" + frameSize + '\'' +
+                ", outPutFolder='" + outPutFolder + '\'' +
                 '}';
     }
 

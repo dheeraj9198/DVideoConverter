@@ -1,5 +1,5 @@
 //mvn com.zenjava:javafx-maven-plugin:2.0:fix-classpath
-package DesktopTranscoder;
+package VideoConverter;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
