@@ -31,6 +31,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.apache.commons.io.FilenameUtils;
@@ -40,13 +41,11 @@ import org.apache.commons.io.FilenameUtils;
  */
 public class TranscoderController {
 
-    public volatile Queue<ConversionTask> videoConversionTaskQueue = new ConcurrentLinkedQueue<ConversionTask>();
+    public volatile ConcurrentLinkedQueue<ConversionTask> videoConversionTaskQueue = new ConcurrentLinkedQueue<ConversionTask>();
     private static final String selectcourse = "Select ...";
     private static final String selectFile = "Select File";
     private static final String chooseLecture = "Choose lecture to remove from queue";
     private static final String[] allowedExts = {"mp4", "flv", "webm", "f4v", "avi", "mkv", "wmv", "mov", "mpeg", "wav", "asf", "mjpeg", "m2p", "m4p", "mpg", "vob", "m2ts", "mts"};
-    private static final int primaryIndex = 0;
-    private static final int secondaryIndex = 1;
     private static final String appName = "DVideoConverter";
     private Parent parent;
     private Scene scene;
@@ -54,19 +53,14 @@ public class TranscoderController {
     private static final Logger logger = LoggerFactory
             .getLogger(TranscoderController.class);
     private static final EventBus eventBus = new EventBus();
-    private Map<String, Integer> courseList;
-    private boolean isCheckBoxSelected = false;
-    private String primaryFileName = null;
-    private String secondaryFileName = null;
-    private Map<String, String> lectureNameToSessionIdMap = new HashMap<String, String>();
-    private int transcodePendingJobNumberInQueue = 0;
-    private boolean updateOnce = false;
+    private volatile String inputFileName = null;
+    private ConcurrentHashMap <String, String> inputToOutputMap = new ConcurrentHashMap<String, String>();
+    private volatile int transcodePendingJobNumberInQueue = 0;
+    private volatile boolean updateOnce = false;
     private AppConfig appConfig = new AppConfig();
-    private boolean enableCompression = true;
-    private File browsedFolder = null;
+    private volatile File browsedFolder = null;
     private static final String courseLectureSeperator = "--";
-    private int totalInQueueInt = 0;
-
+    private volatile int totalInQueueInt = 0;
     private String opf = "C:\\Users\\windows 7\\Desktop\\test\\";
 
     @FXML
@@ -146,7 +140,10 @@ public class TranscoderController {
         fxmlLoader.setController(this);
         try {
             parent = (Parent) fxmlLoader.load();
-            scene = new Scene(parent, 600, 550, Color.SKYBLUE);
+            //scene = new Scene(parent, 600, 550, Color.SKYBLUE);
+            parent.setId("pane");
+            scene = new Scene(parent, 750, 400);
+            scene.getStylesheets().addAll(getClass().getResource("/fxml/style.css").toExternalForm());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -157,8 +154,8 @@ public class TranscoderController {
         //check for update
         List<NameValuePair> postData = new ArrayList<NameValuePair>(1);
         postData.add(new BasicNameValuePair("name", "name"));
-        String response = HttpAgent.post(appConfig.getUpdateUrl(), postData);
-        logger.info("check update response" + response);
+        //String response = HttpAgent.post(appConfig.getUpdateUrl(), postData);
+        //logger.info("check update response" + response);
         this.stage = stageLogin;
         this.stage.resizableProperty().setValue(Boolean.FALSE);
         selectPrimaryVideoButton.setText(selectFile);
@@ -217,17 +214,18 @@ public class TranscoderController {
         this.primaryFrameSizeComboBox.setValue("960x540");
 
         this.selectPrimaryVideoButton.setText(selectFile);
+        this.transcodeProgressBar.setMinHeight(15);
     }
 
     private void clearFields() {
-        this.primaryFileName = null;
+        this.inputFileName = null;
         this.selectPrimaryVideoButton.setText(selectFile);
     }
 
     @FXML
     protected void addInQueue(ActionEvent e) {
 
-        ConversionTask conversionTask = new ConversionTask("\""+primaryFileName+"\"", primaryVideoBitrateComboBox.getValue().toString().replace("kbit/s", ""), primaryAudioBitrateComboBox.getValue().toString().replace("kbit/s", ""), primaryFrameSizeComboBox.getValue().toString(),opf);
+        ConversionTask conversionTask = new ConversionTask("\""+inputFileName+"\"", primaryVideoBitrateComboBox.getValue().toString().replace("kbit/s", ""), primaryAudioBitrateComboBox.getValue().toString().replace("kbit/s", ""), primaryFrameSizeComboBox.getValue().toString(),opf);
         try {
             if (videoConversionTaskQueue.add(conversionTask)) {
                 logger.info("Task successfully added in queue");
@@ -238,7 +236,7 @@ public class TranscoderController {
             logger.error("Unable to add task in queue due to exception " + e1.getMessage());
 
         }
-        taskListComboBox.getItems().add(primaryFileName);
+        taskListComboBox.getItems().add(inputFileName);
         if(videoConversionTaskQueue.size() > 0 && removeFromQueueButton.isDisabled())
         {
             removeFromQueueButton.setDisable(false);
@@ -266,6 +264,11 @@ public class TranscoderController {
     protected void selectPrimaryVideo(ActionEvent e) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Primary Video File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("All Images", "*.*"),
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+                new FileChooser.ExtensionFilter("PNG", "*.png")
+        );
         if (browsedFolder != null) {
             fileChooser.setInitialDirectory(browsedFolder);
         }
@@ -275,11 +278,11 @@ public class TranscoderController {
             browsedFolder = new File(file.getParent());
             String extension = FilenameUtils.getExtension(fileName).toLowerCase();
             if (Arrays.asList(allowedExts).contains(extension)) {
-                this.primaryFileName =  fileName;
+                this.inputFileName =  fileName;
                 selectPrimaryVideoButton.setText(file.getName());
                 logger.info("Primary file name" + fileName);
             } else {
-                showErrorPopup(primaryIndex, fileName, file);
+                showErrorPopup(fileName, file);
             }
         } catch (Exception e1) {
             logger.info("Caught exception " + e1.getMessage());
@@ -300,18 +303,12 @@ public class TranscoderController {
 
     @Subscribe
     public void onForceAddEvent(ForceAddEvent forceAddEvent) {
-        if (forceAddEvent.getIndex() == primaryIndex) {
-            this.primaryFileName = "\"" + forceAddEvent.getFileName() + "\"";
+            this.inputFileName = "\"" + forceAddEvent.getFileName() + "\"";
             selectPrimaryVideoButton.setText(forceAddEvent.getFile().getName());
             logger.info("Force add Primary file name" + forceAddEvent.getFileName());
-        } else if (forceAddEvent.getIndex() == secondaryIndex) {
-            this.secondaryFileName = "\"" + forceAddEvent.getFileName() + "\"";
-            selectSecondaryVideoButton.setText(forceAddEvent.getFile().getName());
-            logger.info("Force add Secondary file name" + forceAddEvent.getFileName());
-        }
     }
 
-    private void showErrorPopup(final int index, final String fileName, final File file) {
+    private void showErrorPopup(final String fileName, final File file) {
         final Stage dialogStage = new Stage();
         dialogStage.setTitle("Error");
         Text text = new Text("Allowed file types are " + getAllowedExts());
@@ -332,7 +329,7 @@ public class TranscoderController {
         addAnyway.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                eventBus.post(new ForceAddEvent(index, fileName, file));
+                eventBus.post(new ForceAddEvent(fileName, file));
                 dialogStage.close();
             }
         });
@@ -350,7 +347,6 @@ public class TranscoderController {
         compressingFileNameText.setFill(Color.GREEN);
         //update lecture status on webapp
         List<NameValuePair> postData = new ArrayList<NameValuePair>(1);
-        String reply = HttpAgent.post(appConfig.getOnTranscodeStartUrl(), postData);
     }
 
 
@@ -365,14 +361,13 @@ public class TranscoderController {
     }
 
     public void onQueuecompleteEvent(TranscodeQueueCompleteEvent event) {
-        logger.info("############################################################### transcode queue complete event received");
         this.transcodePendingJobNumberInQueue = 0;
         if (this.taskListComboBox.isDisable())
         {
             this.taskListComboBox.setDisable(false);
         }
         this.compressionsPendingText.setText(Integer.toString(0));
-        this.lectureNameToSessionIdMap = new HashMap<String, String>();
+        this.inputToOutputMap = new ConcurrentHashMap<String, String>();
         this.transcodeProgressBar.setProgress(0);
         this.compressingFileNameText.setText("none");
         this.compressionsPendingText.setFill(Color.GREEN);

@@ -10,18 +10,12 @@ import java.io.File;
  * To change this template use File | Settings | File Templates.
  */
 public class ForceAddEvent {
-    private int index;
     private String fileName;
     private File file;
 
-    public ForceAddEvent(int index, String fileName, File file) {
-        this.index = index;
+    public ForceAddEvent(String fileName, File file) {
         this.fileName = fileName;
         this.file = file;
-    }
-
-    public int getIndex() {
-        return index;
     }
 
     public String getFileName() {
