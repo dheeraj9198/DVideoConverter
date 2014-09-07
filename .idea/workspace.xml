@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d24aa589-b671-4db4-89d2-7424522b6887" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/np.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/style.css" />
-      <change type="DELETED" beforePath="C:\Users\windows 7\IdeaProjects\DVideoConverter\src\main\resources\fxml\np.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/DesktopTranscoder.log" afterPath="$PROJECT_DIR$/logs/DesktopTranscoder.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/ForceAddEvent.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/ForceAddEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/transcoder.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/transcoder.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVideoConverter.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410102399066" ignored="false" />
+    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410106206971" ignored="false" />
     <file path="/transcoder.fxml" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410105295986" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/App.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/AppConfig.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
@@ -662,12 +655,16 @@
       <created>1407170989422</created>
       <updated>1407170989422</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="UI + concurrency package included">
+      <created>1410106214533</created>
+      <updated>1410106214533</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -738,7 +735,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI + concurrency package included" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -753,6 +750,7 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="first commit" />
+    <MESSAGE value="UI + concurrency package included" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
