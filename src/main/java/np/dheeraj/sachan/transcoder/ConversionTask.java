@@ -9,40 +9,27 @@ import java.io.Serializable;
  * Time: 6:16 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ConversionTask implements Comparable,Serializable,Cloneable{
+public class ConversionTask implements Comparable, Serializable, Cloneable {
     private String fileName;
     private String videoBitrate;
     private String audioBitrate;
     private String frameSize;
-    private String outPutFolder;
+    private String outPutFile;
+    private String crf;
+    private boolean crfEnabled;
 
-    public String getOutPutFolder() {
-        return outPutFolder;
-    }
-
-    public String getFileName() {
-        return fileName;
-    }
-
-    public String getVideoBitrate() {
-        return videoBitrate;
-    }
-
-    public String getAudioBitrate() {
-        return audioBitrate;
-    }
-
-    public String getFrameSize() {
-        return frameSize;
-    }
-
-    public ConversionTask(String fileName, String videoBitrate, String audioBitrate, String frameSize,String outPutFolder) {
-
+    public ConversionTask(String fileName, String videoBitrate, String audioBitrate, String frameSize, String outPutFile, String crf, boolean crfEnabled) {
         this.fileName = fileName;
         this.videoBitrate = videoBitrate;
         this.audioBitrate = audioBitrate;
         this.frameSize = frameSize;
-        this.outPutFolder = outPutFolder;
+        this.outPutFile = outPutFile;
+        this.crf = crf;
+        this.crfEnabled = crfEnabled;
+    }
+
+    public String getFileName() {
+        return fileName;
     }
 
     @Override
@@ -52,12 +39,17 @@ public class ConversionTask implements Comparable,Serializable,Cloneable{
                 ", videoBitrate='" + videoBitrate + '\'' +
                 ", audioBitrate='" + audioBitrate + '\'' +
                 ", frameSize='" + frameSize + '\'' +
-                ", outPutFolder='" + outPutFolder + '\'' +
+                ", outPutFile='" + outPutFile + '\'' +
                 '}';
     }
 
     @Override
     public int compareTo(Object o) {
         return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public String getCommandToExecute() {
+        // TODO make actual command
+        return "";
     }
 }

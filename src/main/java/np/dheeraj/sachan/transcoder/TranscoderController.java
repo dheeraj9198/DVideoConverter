@@ -22,7 +22,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import np.dheeraj.sachan.Events.*;
-import np.dheeraj.sachan.helper.HttpAgent;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
@@ -54,14 +53,13 @@ public class TranscoderController {
             .getLogger(TranscoderController.class);
     private static final EventBus eventBus = new EventBus();
     private volatile String inputFileName = null;
-    private ConcurrentHashMap <String, String> inputToOutputMap = new ConcurrentHashMap<String, String>();
+    private volatile String outPutFileName = null;
+    private ConcurrentHashMap<String, String> inputToOutputMap = new ConcurrentHashMap<String, String>();
     private volatile int transcodePendingJobNumberInQueue = 0;
     private volatile boolean updateOnce = false;
     private AppConfig appConfig = new AppConfig();
     private volatile File browsedFolder = null;
-    private static final String courseLectureSeperator = "--";
     private volatile int totalInQueueInt = 0;
-    private String opf = "C:\\Users\\windows 7\\Desktop\\test\\";
 
     @FXML
     private Text welcomeText;
@@ -72,7 +70,7 @@ public class TranscoderController {
     @FXML
     private ComboBox primaryAudioBitrateComboBox;
     @FXML
-    private Text actionTargetText;
+    private Text messageText;
     @FXML
     private ComboBox primaryFrameSizeComboBox;
     @FXML
@@ -130,9 +128,23 @@ public class TranscoderController {
     @FXML
     private javafx.scene.control.Button removeFromQueueButton;
     @FXML
-    private ComboBox taskListComboBox;
+    private ComboBox<String> taskListComboBox;
     @FXML
     private Text totalInQueueText;
+    @FXML
+    private TextField outputFileTextField;
+    @FXML
+    private Button outputFileButton;
+    @FXML
+    private CheckBox crfBox;
+    @FXML
+    private ComboBox<String> crfComboBox;
+    @FXML
+    private ComboBox<String> videoCodecComboBox;
+    @FXML
+    private ComboBox<String> audioCodecComboBox;
+    @FXML
+    private ComboBox<String> extensionCombobox;
 
     public TranscoderController() {
         eventBus.register(this);
@@ -142,7 +154,7 @@ public class TranscoderController {
             parent = (Parent) fxmlLoader.load();
             //scene = new Scene(parent, 600, 550, Color.SKYBLUE);
             parent.setId("pane");
-            scene = new Scene(parent, 750, 400);
+            scene = new Scene(parent, 750, 500);
             scene.getStylesheets().addAll(getClass().getResource("/fxml/style.css").toExternalForm());
         } catch (IOException e) {
             e.printStackTrace();
@@ -150,6 +162,7 @@ public class TranscoderController {
     }
 
     public void redirectHome(Stage stageLogin) {
+        messageText.setFont(Font.font("Verdana",FontWeight.BOLD,15));
         this.totalInQueueText.setText("" + totalInQueueInt);
         //check for update
         List<NameValuePair> postData = new ArrayList<NameValuePair>(1);
@@ -164,6 +177,7 @@ public class TranscoderController {
         stage.setScene(scene);
         stage.hide();
         stage.show();
+        outputFileButton.setText("Output File");
         String[] videoBitrateArray = {"50 kbit/s",
                 "75 kbit/s",
                 "100 kbit/s",
@@ -179,7 +193,11 @@ public class TranscoderController {
                 "700 kbit/s",
                 "800 kbit/s",
                 "900 kbit/s",
-                "1000 kbit/s"};
+                "1000 kbit/s",
+                "1250 kbit/s",
+                "1500 kbit/s",
+                "1750 kbit/s",
+                "2000 kbit/s"};
 
         String[] audioBitrateArray = {
                 "18 kbit/s",
@@ -205,16 +223,37 @@ public class TranscoderController {
         };
 
         this.primaryVideoBitrateComboBox.getItems().addAll(videoBitrateArray);
-        this.primaryVideoBitrateComboBox.setValue("200 kbit/s");
+        this.primaryVideoBitrateComboBox.setValue("500 kbit/s");
 
         this.primaryAudioBitrateComboBox.getItems().addAll(audioBitrateArray);
-        this.primaryAudioBitrateComboBox.setValue("32 kbit/s");
+        this.primaryAudioBitrateComboBox.setValue("128 kbit/s");
 
         this.primaryFrameSizeComboBox.getItems().addAll(frameSizeArray);
-        this.primaryFrameSizeComboBox.setValue("960x540");
+        this.primaryFrameSizeComboBox.setValue("1280x720");
 
         this.selectPrimaryVideoButton.setText(selectFile);
         this.transcodeProgressBar.setMinHeight(15);
+
+        ArrayList<String> crfStrings = new ArrayList<String>();
+        for (int a = 20; a < 50; a++) {
+            crfStrings.add(a + "");
+        }
+
+        crfComboBox.getItems().addAll(crfStrings);
+        crfComboBox.setValue("25");
+        crfComboBox.setDisable(true);
+
+        String[] extensionArray = {"mkv", "mp4"};
+        extensionCombobox.getItems().addAll(extensionArray);
+        extensionCombobox.setValue("mp4");
+
+        String[] videoCodecs = {"H.264(x264)", "MPEG-4(ffmpeg)", "MPEG-2(ffmpeg)"};
+        videoCodecComboBox.getItems().addAll(videoCodecs);
+        videoCodecComboBox.setValue("H.264(x264)");
+
+        String[] audioCodecs = {"MP3(lame)", "AAC(ffmpeg)"};
+        audioCodecComboBox.getItems().addAll(audioCodecs);
+        audioCodecComboBox.setValue("MP3(lame)");
     }
 
     private void clearFields() {
@@ -223,23 +262,58 @@ public class TranscoderController {
     }
 
     @FXML
+    protected void crfCheckBoxActionListener(ActionEvent event) {
+        if (crfBox.isSelected()) {
+            if (crfComboBox.isDisabled()) {
+                crfComboBox.setDisable(false);
+            }
+            if (!primaryVideoBitrateComboBox.isDisabled()) {
+                primaryVideoBitrateComboBox.setDisable(true);
+            }
+        }  else{
+            if (!crfComboBox.isDisabled()) {
+                crfComboBox.setDisable(true);
+            }
+            if (primaryVideoBitrateComboBox.isDisabled()) {
+                primaryVideoBitrateComboBox.setDisable(false);
+            }
+        }
+    }
+
+    @FXML
     protected void addInQueue(ActionEvent e) {
 
-        ConversionTask conversionTask = new ConversionTask("\""+inputFileName+"\"", primaryVideoBitrateComboBox.getValue().toString().replace("kbit/s", ""), primaryAudioBitrateComboBox.getValue().toString().replace("kbit/s", ""), primaryFrameSizeComboBox.getValue().toString(),opf);
+        logger.info("input file "+inputFileName);
+        logger.info("output file "+outPutFileName);
+
+        if(inputFileName == null )
+        {
+            messageText.setFill(Color.RED);
+            messageText.setText("No input file selected");
+        }else if(outPutFileName == null)
+        {
+            messageText.setFill(Color.RED);
+            messageText.setText("No output file selected");
+        }
+
+        ConversionTask conversionTask = new ConversionTask("\"" + inputFileName + "\"", primaryVideoBitrateComboBox.getValue().toString().replace("kbit/s", ""),
+                primaryAudioBitrateComboBox.getValue().toString().replace("kbit/s", ""),
+                primaryFrameSizeComboBox.getValue().toString(),
+                outPutFileName+"."+extensionCombobox.getValue()+"\"",crfComboBox.getValue(),crfBox.isSelected());
         try {
             if (videoConversionTaskQueue.add(conversionTask)) {
                 logger.info("Task successfully added in queue");
+                taskListComboBox.getItems().add(inputFileName);
+                if (videoConversionTaskQueue.size() > 0 && removeFromQueueButton.isDisabled()) {
+                    removeFromQueueButton.setDisable(false);
+                }
+                inputFileName = null;
+                outPutFileName = null;
             } else {
                 logger.error("Unable to add task in queue");
             }
         } catch (Exception e1) {
             logger.error("Unable to add task in queue due to exception " + e1.getMessage());
-
-        }
-        taskListComboBox.getItems().add(inputFileName);
-        if(videoConversionTaskQueue.size() > 0 && removeFromQueueButton.isDisabled())
-        {
-            removeFromQueueButton.setDisable(false);
         }
     }
 
@@ -251,6 +325,22 @@ public class TranscoderController {
     protected void handleStopButtonAction(ActionEvent event) {
         onWindowClosed();
     }
+
+    @FXML
+    protected void selectOutputVideo(ActionEvent event) throws Exception {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Primary Video File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("mkv", "*.mkv"),
+                new FileChooser.ExtensionFilter("mp4", "*.mp4")
+        );
+        if (browsedFolder != null) {
+            fileChooser.setInitialDirectory(browsedFolder);
+        }
+        File file = fileChooser.showSaveDialog(stage);
+        outPutFileName = "\""+file.getAbsolutePath();
+    }
+
 
     public void onWindowClosed() {
         eventBus.post(new StopEverthingEvent());
@@ -264,11 +354,6 @@ public class TranscoderController {
     protected void selectPrimaryVideo(ActionEvent e) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Primary Video File");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("All Images", "*.*"),
-                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
-                new FileChooser.ExtensionFilter("PNG", "*.png")
-        );
         if (browsedFolder != null) {
             fileChooser.setInitialDirectory(browsedFolder);
         }
@@ -278,7 +363,7 @@ public class TranscoderController {
             browsedFolder = new File(file.getParent());
             String extension = FilenameUtils.getExtension(fileName).toLowerCase();
             if (Arrays.asList(allowedExts).contains(extension)) {
-                this.inputFileName =  fileName;
+                this.inputFileName = "\""+fileName+"\"";
                 selectPrimaryVideoButton.setText(file.getName());
                 logger.info("Primary file name" + fileName);
             } else {
@@ -303,9 +388,9 @@ public class TranscoderController {
 
     @Subscribe
     public void onForceAddEvent(ForceAddEvent forceAddEvent) {
-            this.inputFileName = "\"" + forceAddEvent.getFileName() + "\"";
-            selectPrimaryVideoButton.setText(forceAddEvent.getFile().getName());
-            logger.info("Force add Primary file name" + forceAddEvent.getFileName());
+        this.inputFileName = "\"" + forceAddEvent.getFileName() + "\"";
+        selectPrimaryVideoButton.setText(forceAddEvent.getFile().getName());
+        logger.info("Force add Primary file name" + forceAddEvent.getFileName());
     }
 
     private void showErrorPopup(final String fileName, final File file) {
@@ -362,8 +447,7 @@ public class TranscoderController {
 
     public void onQueuecompleteEvent(TranscodeQueueCompleteEvent event) {
         this.transcodePendingJobNumberInQueue = 0;
-        if (this.taskListComboBox.isDisable())
-        {
+        if (this.taskListComboBox.isDisable()) {
             this.taskListComboBox.setDisable(false);
         }
         this.compressionsPendingText.setText(Integer.toString(0));
@@ -383,14 +467,19 @@ public class TranscoderController {
     }
 
     public void removeFromQueue(ActionEvent e) {
-        if(taskListComboBox.getValue() != null && !taskListComboBox.getValue().toString().replace(" ","").equals(""))
-        {
-            for(ConversionTask conversionTask : videoConversionTaskQueue)
-            {
-                if(conversionTask.getFileName().equals("\""+taskListComboBox.getValue()+"\""))
-                {
+        if (taskListComboBox.getValue() != null && !taskListComboBox.getValue().toString().replace(" ", "").equals("")) {
+            for (ConversionTask conversionTask : videoConversionTaskQueue) {
+                if (conversionTask.getFileName().equals("\"" + taskListComboBox.getValue() + "\"")) {
                     videoConversionTaskQueue.remove(conversionTask);
                     taskListComboBox.getItems().remove(taskListComboBox.getValue());
+                }
+            }
+
+            if(videoConversionTaskQueue.isEmpty())
+            {
+                if(!removeFromQueueButton.isDisabled())
+                {
+                removeFromQueueButton.setDisable(true);
                 }
             }
         }

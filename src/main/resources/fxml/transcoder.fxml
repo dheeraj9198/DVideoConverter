@@ -17,14 +17,23 @@
     <!-- <Text fx:id="welcomeText" text="home" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
  -->
 
-    <Label text="Select File" GridPane.columnIndex="0" GridPane.rowIndex="4">
+    <Label text="Select File" GridPane.columnIndex="0" GridPane.rowIndex="3">
     </Label>
     <Button fx:id="selectPrimaryVideoButton" onAction="#selectPrimaryVideo" GridPane.columnIndex="1"
-            GridPane.rowIndex="4"
+            GridPane.rowIndex="3"
             prefWidth="120.0" maxWidth="120.0"/>
 
-    <Label text="Select Frame Size " GridPane.columnIndex="2" GridPane.rowIndex="4"/>
-    <ComboBox fx:id="primaryFrameSizeComboBox" GridPane.columnIndex="3" GridPane.rowIndex="4" prefWidth="120.0"
+
+    <Label text="Select Frame Size " GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+    <ComboBox fx:id="primaryFrameSizeComboBox" GridPane.columnIndex="3" GridPane.rowIndex="3" prefWidth="120.0"
+              maxWidth="120.0"/>
+
+
+    <Label text="Constant Quality" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <CheckBox fx:id="crfBox" onAction="#crfCheckBoxActionListener" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.halignment="CENTER"/>
+
+    <Label text="Select CRF" GridPane.rowIndex="4" GridPane.columnIndex="2" />
+    <ComboBox fx:id="crfComboBox" GridPane.rowIndex="4" GridPane.columnIndex="3"  prefWidth="120.0"
               maxWidth="120.0"/>
 
     <Label text="Select Video Bitrate " GridPane.columnIndex="0" GridPane.rowIndex="5"/>
@@ -34,6 +43,27 @@
     <Label text="Select Audio Bitrate " GridPane.columnIndex="2" GridPane.rowIndex="5"/>
     <ComboBox fx:id="primaryAudioBitrateComboBox" GridPane.columnIndex="3" GridPane.rowIndex="5" prefWidth="120.0"
               maxWidth="120.0"/>
+
+
+    <Label text="Select Output File " GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <Button fx:id="outputFileButton" onAction="#selectOutputVideo" GridPane.columnIndex="1"
+            GridPane.rowIndex="6" prefWidth="120.0" maxWidth="120.0"/>
+
+    <Label text="Select Extension " GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+    <ComboBox fx:id="extensionCombobox"  GridPane.columnIndex="3"
+            GridPane.rowIndex="6" prefWidth="120.0" maxWidth="120.0"/>
+
+
+
+    <Label text="Select Video Codec " GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+    <ComboBox fx:id="videoCodecComboBox" GridPane.columnIndex="1" GridPane.rowIndex="7" prefWidth="120.0"
+              maxWidth="120.0"/>
+
+    <Label text="Select Audio Codec " GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+    <ComboBox fx:id="audioCodecComboBox" GridPane.columnIndex="3" GridPane.rowIndex="7" prefWidth="120.0"
+              maxWidth="120.0"/>
+
+
 
 
     <Label text="Add in queue" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
@@ -64,21 +94,18 @@
     <Button fx:id="startButton" onAction="#handleStartButtonAction" text="Start Process" GridPane.columnIndex="2"
             GridPane.rowIndex="11" prefWidth="110.0" maxWidth="110" GridPane.columnSpan="1"/>
 
-    <Button fx:id="stopButton" onAction="#handleStopButtonAction" text="Stop Process" GridPane.columnIndex="3"
+    <Button fx:id="stopButton" onAction="#handleStopButtonAction" text="Abort" GridPane.columnIndex="3"
             GridPane.rowIndex="11" prefWidth="120.0" maxWidth="120"/>
 
     <Label text="Compresssion Status" GridPane.columnIndex="0" GridPane.rowIndex="12"/>
     <ProgressBar fx:id="transcodeProgressBar" GridPane.columnIndex="1" GridPane.rowIndex="12" prefWidth="450.0 "
                  maxWidth="450.0" GridPane.columnSpan="4"/>
 
-    <Label fx:id="compressingLabel" GridPane.columnIndex="0" GridPane.rowIndex="14"/>
-    <Text fx:id="compressingFileNameText" GridPane.columnIndex="1" GridPane.rowIndex="14"/>
-
-    <Label fx:id="compressionsPendingLabel" GridPane.columnIndex="2" GridPane.rowIndex="14"/>
-    <Text fx:id="compressionsPendingText" GridPane.columnIndex="3" GridPane.rowIndex="14"/>
-
+    <Label fx:id="compressingLabel"  text="Compressing" GridPane.columnIndex="0" GridPane.rowIndex="13"/>
+    <Text fx:id="compressingFileNameText" GridPane.columnIndex="1" GridPane.rowIndex="13" GridPane.columnSpan="3"/>
+    <Label fx:id="compressionsPendingLabel" text="Tasks Pending" GridPane.columnIndex="0" GridPane.rowIndex="14"/>
+    <Text fx:id="compressionsPendingText" GridPane.columnIndex="1" GridPane.rowIndex="14"/>
+    <Text fx:id="messageText" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="15"/>
     <Text fx:id="updateText" GridPane.columnIndex="0" GridPane.rowIndex="16"/>
-
-    <Text fx:id="actionTargetText" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="17"/>
 
 </GridPane>
