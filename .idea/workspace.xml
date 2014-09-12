@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d24aa589-b671-4db4-89d2-7424522b6887" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/AudioCodec.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/VideoCodec.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="6ebaaa22-3f9c-4224-adba-39a38f02d846" name="New changelist" comment="">
@@ -17,18 +13,20 @@
     </list>
     <ignored path="DVideoConverter.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410549123429" ignored="false" />
+    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410549204740" ignored="false" />
     <file path="/transcoder.fxml" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410544785543" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/App.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/AppConfig.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
     <file path="/QueueEncoderThread.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052972134" ignored="false" />
-    <file path="/TranscoderController.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410548938074" ignored="false" />
-    <file path="/ConversionTask.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410548740764" ignored="false" />
+    <file path="/TranscoderController.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410552815584" ignored="false" />
+    <file path="/ConversionTask.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410551286875" ignored="false" />
     <file path="/style.css" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410544901431" ignored="false" />
     <file path="/a.dummy" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410092197187" ignored="false" />
     <file path="/.gitignore" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410106730047" ignored="false" />
     <file path="$PROJECT_DIR$/.gitignore" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410106965423" ignored="true" />
     <file path="/fragment.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410542237145" ignored="false" />
+    <file path="/VideoCodec.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410552724585" ignored="false" />
+    <file path="/AudioCodec.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410552786982" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,24 +96,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TranscoderController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TranscoderController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="479" column="20" selection-start="17228" selection-end="17228" vertical-scroll-proportion="-8.767858">
+            <state line="291" column="99" selection-start="9885" selection-end="9885" vertical-scroll-proportion="-0.860835">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5674#5689#0" expanded="true" />
                 <element signature="e#8113#8121#0" expanded="true" />
+                <element signature="e#14499#14663#0" expanded="true" />
+                <element signature="e#14652#14653#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -134,7 +125,25 @@
       <file leaf-file-name="ConversionTask.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="33" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0">
+            <state line="51" column="18" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VideoCodec.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/VideoCodec.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="0" selection-start="478" selection-end="774" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AudioCodec.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/AudioCodec.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="47" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -166,6 +175,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/fxml/style.css" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/transcoder.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/VideoCodec.java" />
+        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/AudioCodec.java" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" />
       </list>
     </option>
@@ -275,8 +286,26 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="DVideoConverter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DVideoConverter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -298,11 +327,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fxml" />
+              <option name="myItemId" value="sachan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -323,36 +352,16 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DVideoConverter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVideoConverter" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVideoConverter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVideoConverter" />
+              <option name="myItemId" value="sachan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copyright" />
+              <option name="myItemId" value="transcoder" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -572,7 +581,11 @@
       <created>1410549125769</created>
       <updated>1410549125769</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="codecs and crf included">
+      <created>1410549207390</created>
+      <updated>1410549207390</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -694,20 +707,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/src.zip!/java/lang/annotation/RetentionPolicy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="12" selection-start="577" selection-end="577" vertical-scroll-proportion="0.32911393">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/src.zip!/java/lang/annotation/ElementType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="12" selection-start="596" selection-end="596" vertical-scroll-proportion="0.33256617">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/src.zip!/java/lang/annotation/Annotation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="17" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
@@ -778,6 +777,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/transcoder.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="80" column="32" selection-start="3677" selection-end="3677" vertical-scroll-proportion="0.0">
@@ -789,26 +795,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="33" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0">
+        <state line="51" column="18" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/VideoCodec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="478" selection-end="774" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/AudioCodec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="47" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="479" column="20" selection-start="17228" selection-end="17228" vertical-scroll-proportion="-8.767858">
+        <state line="291" column="99" selection-start="9885" selection-end="9885" vertical-scroll-proportion="-0.860835">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5674#5689#0" expanded="true" />
             <element signature="e#8113#8121#0" expanded="true" />
+            <element signature="e#14499#14663#0" expanded="true" />
+            <element signature="e#14652#14653#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>

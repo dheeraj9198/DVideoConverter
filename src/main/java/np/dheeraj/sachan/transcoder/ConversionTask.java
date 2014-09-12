@@ -49,7 +49,6 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
     }
 
     public String getCommandToExecute() {
-        // TODO make actual command
         return "";
     }
 }

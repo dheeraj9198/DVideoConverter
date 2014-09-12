@@ -247,13 +247,18 @@ public class TranscoderController {
         extensionCombobox.getItems().addAll(extensionArray);
         extensionCombobox.setValue("mp4");
 
-        String[] videoCodecs = {"H.264(x264)", "MPEG-4(ffmpeg)", "MPEG-2(ffmpeg)"};
-        videoCodecComboBox.getItems().addAll(videoCodecs);
-        videoCodecComboBox.setValue("H.264(x264)");
 
-        String[] audioCodecs = {"MP3(lame)", "AAC(ffmpeg)"};
-        audioCodecComboBox.getItems().addAll(audioCodecs);
-        audioCodecComboBox.setValue("MP3(lame)");
+        for(VideoCodec videoCodec : VideoCodec.values())
+        {
+            videoCodecComboBox.getItems().addAll(videoCodec.name());
+        }
+        videoCodecComboBox.setValue(VideoCodec.H264.name());
+
+        for(AudioCodec audioCodec : AudioCodec.values())
+        {
+            audioCodecComboBox.getItems().addAll(audioCodec.name());
+        }
+        audioCodecComboBox.setValue(AudioCodec.MP3.name());
     }
 
     private void clearFields() {
@@ -284,7 +289,7 @@ public class TranscoderController {
     protected void addInQueue(ActionEvent e) {
 
         logger.info("input file "+inputFileName);
-        logger.info("output file "+outPutFileName);
+        logger.info("output file "+outPutFileName+VideoCodec.getCodec(videoCodecComboBox.getValue()));
 
         if(inputFileName == null )
         {
