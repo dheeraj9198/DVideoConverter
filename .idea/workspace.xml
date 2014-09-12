@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d24aa589-b671-4db4-89d2-7424522b6887" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/AudioCodec.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/VideoCodec.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="6ebaaa22-3f9c-4224-adba-39a38f02d846" name="New changelist" comment="">
@@ -13,7 +9,7 @@
     </list>
     <ignored path="DVideoConverter.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410549204740" ignored="false" />
+    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410552857720" ignored="false" />
     <file path="/transcoder.fxml" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410544785543" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/App.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/AppConfig.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
@@ -585,7 +581,11 @@
       <created>1410549207390</created>
       <updated>1410549207390</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="audio video codec enums">
+      <created>1410552861106</created>
+      <updated>1410552861106</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -610,7 +610,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -681,7 +681,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="codecs and crf included" />
+    <option name="LAST_COMMIT_MESSAGE" value="audio video codec enums" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -698,6 +698,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="UI + concurrency package included" />
     <MESSAGE value="codecs and crf included" />
+    <MESSAGE value="audio video codec enums" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
