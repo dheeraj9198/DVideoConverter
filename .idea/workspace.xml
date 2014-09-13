@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d24aa589-b671-4db4-89d2-7424522b6887" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TrancodeCompleteEvent.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TrancodeCompleteEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodeFailEvent.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodeFailEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="6ebaaa22-3f9c-4224-adba-39a38f02d846" name="New changelist" comment="">
@@ -9,13 +14,13 @@
     </list>
     <ignored path="DVideoConverter.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410552857720" ignored="false" />
+    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410627893099" ignored="false" />
     <file path="/transcoder.fxml" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410544785543" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/App.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/AppConfig.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
     <file path="/QueueEncoderThread.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052972134" ignored="false" />
-    <file path="/TranscoderController.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410552815584" ignored="false" />
-    <file path="/ConversionTask.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410551286875" ignored="false" />
+    <file path="/TranscoderController.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410630563168" ignored="false" />
+    <file path="/ConversionTask.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410624054370" ignored="false" />
     <file path="/style.css" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410544901431" ignored="false" />
     <file path="/a.dummy" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410092197187" ignored="false" />
     <file path="/.gitignore" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410106730047" ignored="false" />
@@ -23,6 +28,9 @@
     <file path="/fragment.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410542237145" ignored="false" />
     <file path="/VideoCodec.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410552724585" ignored="false" />
     <file path="/AudioCodec.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410552786982" ignored="false" />
+    <file path="/FfmpegRunnable.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410630630915" ignored="false" />
+    <file path="/TranscodeFailEvent.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410630396212" ignored="false" />
+    <file path="/TrancodeCompleteEvent.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410630600354" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +45,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -73,7 +82,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -92,28 +100,78 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TranscoderController.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TranscoderController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="291" column="99" selection-start="9885" selection-end="9885" vertical-scroll-proportion="-0.860835">
+            <state line="344" column="140" selection-start="12324" selection-end="12324" vertical-scroll-proportion="39.785713">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5674#5689#0" expanded="true" />
-                <element signature="e#8113#8121#0" expanded="true" />
-                <element signature="e#14499#14663#0" expanded="true" />
-                <element signature="e#14652#14653#0" expanded="true" />
+                <element signature="e#1234#1250#0" expanded="true" />
+                <element signature="e#2140#2156#0" expanded="true" />
+                <element signature="e#5716#5731#0" expanded="true" />
+                <element signature="e#8155#8163#0" expanded="true" />
+                <element signature="e#15421#15585#0" expanded="true" />
+                <element signature="e#15574#15575#0" expanded="true" />
+                <element signature="e#15618#15858#0" expanded="true" />
+                <element signature="e#15847#15848#0" expanded="true" />
+                <element signature="e#16428#16443#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="transcoder.fxml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/transcoder.fxml">
+      <file leaf-file-name="FfmpegRunnable.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="32" selection-start="3677" selection-end="3677" vertical-scroll-proportion="0.0">
+            <state line="59" column="86" selection-start="2196" selection-end="2196" vertical-scroll-proportion="0.5764139">
               <folding>
-                <marker date="1410546848051" expanded="true" signature="4073:4090" placeholder="{...}" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrancodeCompleteEvent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TrancodeCompleteEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="35" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TranscodeFailEvent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodeFailEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="35" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QueueEncoderThread.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/QueueEncoderThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="13" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FfmpegCommandLine.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/FfmpegCommandLine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="13" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExecLogHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/ExecLogHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="13" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,25 +179,7 @@
       <file leaf-file-name="ConversionTask.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="18" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VideoCodec.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/VideoCodec.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="478" selection-end="774" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AudioCodec.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/AudioCodec.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="47" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0">
+            <state line="58" column="18" selection-start="1927" selection-end="1927" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -170,10 +210,13 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/style.css" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/transcoder.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/VideoCodec.java" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/AudioCodec.java" />
+        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TrancodeCompleteEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodeFailEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java" />
       </list>
     </option>
   </component>
@@ -246,7 +289,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -304,6 +346,10 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VideoConverter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -328,6 +374,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sachan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="videoTranscoder" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -361,23 +411,51 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DVideoConverter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DVideoConverter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sachan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="TODO_SCOPE" value="Project Files" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
@@ -430,19 +508,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -469,6 +534,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -585,7 +663,11 @@
       <created>1410552861106</created>
       <updated>1410552861106</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="audio video codec enums">
+      <created>1410557003016</created>
+      <updated>1410557003016</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -610,12 +692,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39910814" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -624,17 +705,18 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32552955" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32441473" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67001116" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32998884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67558527" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -708,37 +790,79 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/src.zip!/java/lang/annotation/Annotation.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="17" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/VideoCodec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="478" selection-end="774" vertical-scroll-proportion="0.51898736">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/src.zip!/java/lang/annotation/AnnotationFormatError.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/AudioCodec.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="13" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
+        <state line="28" column="47" selection-start="567" selection-end="567" vertical-scroll-proportion="0.51898736">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/src.zip!/java/lang/annotation/AnnotationTypeMismatchException.java">
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/jre/lib/jfxrt.jar!/javafx/scene/control/Tooltip.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="13" selection-start="694" selection-end="694" vertical-scroll-proportion="0.0">
+        <state line="17" column="11" selection-start="805" selection-end="805" vertical-scroll-proportion="0.33216783">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/src.zip!/java/lang/AbstractMethodError.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/transcoder.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="6" selection-start="578" selection-end="578" vertical-scroll-proportion="0.34177214">
+        <state line="80" column="32" selection-start="3677" selection-end="3677" vertical-scroll-proportion="0.4353147">
+          <folding>
+            <marker date="1410546848051" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/ExecLogHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/src.zip!/java/lang/Override.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6-sources.jar!/org/slf4j/Logger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="24" selection-start="261" selection-end="261" vertical-scroll-proportion="0.101265825">
+        <state line="58" column="17" selection-start="2133" selection-end="2133" vertical-scroll-proportion="0.3329384">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/QueueEncoderThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="13" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/FfmpegCommandLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/src.zip!/java/util/concurrent/ConcurrentLinkedQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="739" column="20" selection-start="27285" selection-end="27285" vertical-scroll-proportion="5.1030807">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="18" selection-start="1927" selection-end="1927" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -750,80 +874,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/SpringBeans.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/jre/lib/jfxrt.jar!/javafx/scene/text/Text.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="22" selection-start="3523" selection-end="3523" vertical-scroll-proportion="0.33273703">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/jre/lib/jfxrt.jar!/javafx/scene/text/Font.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="41" selection-start="1302" selection-end="1302" vertical-scroll-proportion="0.21754386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="20" selection-start="138" selection-end="138" vertical-scroll-proportion="0.10138249">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/transcoder.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="32" selection-start="3677" selection-end="3677" vertical-scroll-proportion="0.0">
+        <state line="344" column="140" selection-start="12324" selection-end="12324" vertical-scroll-proportion="39.785713">
           <folding>
-            <marker date="1410546848051" expanded="true" signature="4073:4090" placeholder="{...}" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1234#1250#0" expanded="true" />
+            <element signature="e#2140#2156#0" expanded="true" />
+            <element signature="e#5716#5731#0" expanded="true" />
+            <element signature="e#8155#8163#0" expanded="true" />
+            <element signature="e#15421#15585#0" expanded="true" />
+            <element signature="e#15574#15575#0" expanded="true" />
+            <element signature="e#15618#15858#0" expanded="true" />
+            <element signature="e#15847#15848#0" expanded="true" />
+            <element signature="e#16428#16443#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TrancodeCompleteEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="18" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.0">
+        <state line="17" column="35" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/VideoCodec.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodeFailEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="478" selection-end="774" vertical-scroll-proportion="0.0">
+        <state line="17" column="35" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/AudioCodec.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="47" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="291" column="99" selection-start="9885" selection-end="9885" vertical-scroll-proportion="-0.860835">
+        <state line="59" column="86" selection-start="2196" selection-end="2196" vertical-scroll-proportion="0.5764139">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5674#5689#0" expanded="true" />
-            <element signature="e#8113#8121#0" expanded="true" />
-            <element signature="e#14499#14663#0" expanded="true" />
-            <element signature="e#14652#14653#0" expanded="true" />
           </folding>
         </state>
       </provider>

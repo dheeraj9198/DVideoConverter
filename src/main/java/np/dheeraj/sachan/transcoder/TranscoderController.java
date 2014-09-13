@@ -30,8 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.*;
 
 import org.apache.commons.io.FilenameUtils;
 
@@ -40,7 +39,7 @@ import org.apache.commons.io.FilenameUtils;
  */
 public class TranscoderController {
 
-    public volatile ConcurrentLinkedQueue<ConversionTask> videoConversionTaskQueue = new ConcurrentLinkedQueue<ConversionTask>();
+    public volatile ArrayBlockingQueue<ConversionTask> videoConversionTaskQueue = new ArrayBlockingQueue<ConversionTask>(1000);
     private static final String selectcourse = "Select ...";
     private static final String selectFile = "Select File";
     private static final String chooseLecture = "Choose lecture to remove from queue";
@@ -60,6 +59,7 @@ public class TranscoderController {
     private AppConfig appConfig = new AppConfig();
     private volatile File browsedFolder = null;
     private volatile int totalInQueueInt = 0;
+    private ScheduledExecutorService transcoderScheduledExecutorService;
 
     @FXML
     private Text welcomeText;
@@ -162,6 +162,7 @@ public class TranscoderController {
     }
 
     public void redirectHome(Stage stageLogin) {
+        startButton.setDisable(true);
         messageText.setFont(Font.font("Verdana",FontWeight.BOLD,15));
         this.totalInQueueText.setText("" + totalInQueueInt);
         //check for update
@@ -235,13 +236,14 @@ public class TranscoderController {
         this.transcodeProgressBar.setMinHeight(15);
 
         ArrayList<String> crfStrings = new ArrayList<String>();
-        for (int a = 20; a < 50; a++) {
+        for (int a = 15; a < 50; a++) {
             crfStrings.add(a + "");
         }
 
         crfComboBox.getItems().addAll(crfStrings);
         crfComboBox.setValue("25");
         crfComboBox.setDisable(true);
+        crfComboBox.setTooltip(new Tooltip("Lower value results in better quality"));
 
         String[] extensionArray = {"mkv", "mp4"};
         extensionCombobox.getItems().addAll(extensionArray);
@@ -289,22 +291,27 @@ public class TranscoderController {
     protected void addInQueue(ActionEvent e) {
 
         logger.info("input file "+inputFileName);
-        logger.info("output file "+outPutFileName+VideoCodec.getCodec(videoCodecComboBox.getValue()));
+        logger.info("output file "+outPutFileName);
+        logger.info(VideoCodec.getCodec(videoCodecComboBox.getValue()));
+        logger.info(AudioCodec.getCodec(audioCodecComboBox.getValue()));
+
 
         if(inputFileName == null )
         {
             messageText.setFill(Color.RED);
             messageText.setText("No input file selected");
+            return;
         }else if(outPutFileName == null)
         {
             messageText.setFill(Color.RED);
             messageText.setText("No output file selected");
+            return;
         }
 
         ConversionTask conversionTask = new ConversionTask("\"" + inputFileName + "\"", primaryVideoBitrateComboBox.getValue().toString().replace("kbit/s", ""),
                 primaryAudioBitrateComboBox.getValue().toString().replace("kbit/s", ""),
                 primaryFrameSizeComboBox.getValue().toString(),
-                outPutFileName+"."+extensionCombobox.getValue()+"\"",crfComboBox.getValue(),crfBox.isSelected());
+                outPutFileName+"."+extensionCombobox.getValue()+"\"",crfComboBox.getValue(),crfBox.isSelected(),VideoCodec.getCodec(videoCodecComboBox.getValue()),AudioCodec.getCodec(audioCodecComboBox.getValue()));
         try {
             if (videoConversionTaskQueue.add(conversionTask)) {
                 logger.info("Task successfully added in queue");
@@ -314,6 +321,16 @@ public class TranscoderController {
                 }
                 inputFileName = null;
                 outPutFileName = null;
+                totalInQueueInt++;
+                totalInQueueText.setText(totalInQueueInt+"");
+                if(totalInQueueInt > 0)
+                {
+                    if(startButton.isDisabled())
+                    {
+                        startButton.setDisable(false);
+                    }
+                }
+
             } else {
                 logger.error("Unable to add task in queue");
             }
@@ -324,6 +341,8 @@ public class TranscoderController {
 
     @FXML
     protected void handleStartButtonAction(ActionEvent event) {
+        transcoderScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+        transcoderScheduledExecutorService.scheduleWithFixedDelay(new FfmpegRunnable(videoConversionTaskQueue,eventBus),1,1,TimeUnit.SECONDS);
     }
 
     @FXML
@@ -477,6 +496,15 @@ public class TranscoderController {
                 if (conversionTask.getFileName().equals("\"" + taskListComboBox.getValue() + "\"")) {
                     videoConversionTaskQueue.remove(conversionTask);
                     taskListComboBox.getItems().remove(taskListComboBox.getValue());
+                    totalInQueueInt--;
+                    totalInQueueText.setText(totalInQueueInt+"");
+                    if(totalInQueueInt == 0)
+                    {
+                        if(!startButton.isDisabled())
+                        {
+                            startButton.setDisable(true);
+                        }
+                    }
                 }
             }
 

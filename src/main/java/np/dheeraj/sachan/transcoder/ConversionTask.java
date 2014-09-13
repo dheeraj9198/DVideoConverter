@@ -17,8 +17,10 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
     private String outPutFile;
     private String crf;
     private boolean crfEnabled;
+    private String videoCodec;
+    private String audioCodec;
 
-    public ConversionTask(String fileName, String videoBitrate, String audioBitrate, String frameSize, String outPutFile, String crf, boolean crfEnabled) {
+    public ConversionTask(String fileName, String videoBitrate, String audioBitrate, String frameSize, String outPutFile, String crf, boolean crfEnabled,String videoCodec,String audioCodec) {
         this.fileName = fileName;
         this.videoBitrate = videoBitrate;
         this.audioBitrate = audioBitrate;
@@ -26,6 +28,8 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
         this.outPutFile = outPutFile;
         this.crf = crf;
         this.crfEnabled = crfEnabled;
+        this.videoCodec = videoCodec;
+        this.audioCodec = audioCodec;
     }
 
     public String getFileName() {
@@ -40,6 +44,10 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
                 ", audioBitrate='" + audioBitrate + '\'' +
                 ", frameSize='" + frameSize + '\'' +
                 ", outPutFile='" + outPutFile + '\'' +
+                ", crf='" + crf + '\'' +
+                ", crfEnabled=" + crfEnabled +
+                ", videoCodec='" + videoCodec + '\'' +
+                ", audioCodec='" + audioCodec + '\'' +
                 '}';
     }
 
@@ -49,6 +57,11 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
     }
 
     public String getCommandToExecute() {
-        return "";
+        if(crfEnabled)
+        {
+            return "C:\\Program Files\\DVideoConverter\\dheeraj.exe -i "+fileName+" -vcodec "+videoCodec+" -acodec "+audioCodec+" -b:a "+audioBitrate+"k -s " +frameSize+" -crf "+crf+" -y "+outPutFile;
+        }   else{
+            return "C:\\Program Files\\DVideoConverter\\dheeraj.exe -i "+fileName+" -vcodec "+videoCodec+" -acodec "+audioCodec+" -b:a "+audioBitrate+"k -s " +frameSize+" -b:v "+videoBitrate+"k -y "+outPutFile;
+        }
     }
 }
