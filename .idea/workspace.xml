@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d24aa589-b671-4db4-89d2-7424522b6887" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\windows 7\IdeaProjects\DVideoConverter\src\main\resources\fxml\np.jpg" afterPath="$PROJECT_DIR$/src/main/resources/fxml/np1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/np.jpg" afterPath="$PROJECT_DIR$/src/main/resources/fxml/np.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TrancodeCompleteEvent.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TrancodeCompleteEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodeFailEvent.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodeFailEvent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodingFileEvent.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodingFileEvent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="6ebaaa22-3f9c-4224-adba-39a38f02d846" name="New changelist" comment="">
@@ -17,13 +12,13 @@
     </list>
     <ignored path="DVideoConverter.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410630642257" ignored="false" />
+    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410638539503" ignored="false" />
     <file path="/transcoder.fxml" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410544785543" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/App.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/AppConfig.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
     <file path="/QueueEncoderThread.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052972134" ignored="false" />
     <file path="/TranscoderController.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410631973897" ignored="false" />
-    <file path="/ConversionTask.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410632158601" ignored="false" />
+    <file path="/ConversionTask.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410638892181" ignored="false" />
     <file path="/style.css" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410631157016" ignored="false" />
     <file path="/a.dummy" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410092197187" ignored="false" />
     <file path="/.gitignore" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410106730047" ignored="false" />
@@ -31,7 +26,7 @@
     <file path="/fragment.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410542237145" ignored="false" />
     <file path="/VideoCodec.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410552724585" ignored="false" />
     <file path="/AudioCodec.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410552786982" ignored="false" />
-    <file path="/FfmpegRunnable.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410631758786" ignored="false" />
+    <file path="/FfmpegRunnable.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410641516657" ignored="false" />
     <file path="/TranscodeFailEvent.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410630396212" ignored="false" />
     <file path="/TrancodeCompleteEvent.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410631496093" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -103,29 +98,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TranscoderController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="323" column="27" selection-start="11677" selection-end="11677" vertical-scroll-proportion="-3.625">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1234#1250#0" expanded="true" />
-                <element signature="e#2140#2156#0" expanded="true" />
-                <element signature="e#5718#5733#0" expanded="true" />
-                <element signature="e#8157#8165#0" expanded="true" />
-                <element signature="e#15492#15656#0" expanded="true" />
-                <element signature="e#15645#15646#0" expanded="true" />
-                <element signature="e#15689#15929#0" expanded="true" />
-                <element signature="e#15918#15919#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FfmpegRunnable.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FfmpegRunnable.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="58" selection-start="2691" selection-end="2691" vertical-scroll-proportion="0.0">
+            <state line="63" column="50" selection-start="2424" selection-end="2424" vertical-scroll-proportion="0.33216783">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,15 +136,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueueEncoderThread.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/QueueEncoderThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="13" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FfmpegCommandLine.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/FfmpegCommandLine.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -187,10 +154,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConversionTask.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ConversionTask.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="167" selection-start="2390" selection-end="2390" vertical-scroll-proportion="0.8635514">
+            <state line="55" column="8" selection-start="1791" selection-end="1791" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -226,9 +193,9 @@
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TrancodeCompleteEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodeFailEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodingFileEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java" />
       </list>
     </option>
   </component>
@@ -743,7 +710,11 @@
       <created>1410630647390</created>
       <updated>1410630647390</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="converter implemented&#10;">
+      <created>1410638545300</created>
+      <updated>1410638545300</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -839,7 +810,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="audio video codec enums" />
+    <option name="LAST_COMMIT_MESSAGE" value="converter implemented&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -857,6 +828,7 @@
     <MESSAGE value="UI + concurrency package included" />
     <MESSAGE value="codecs and crf included" />
     <MESSAGE value="audio video codec enums" />
+    <MESSAGE value="converter implemented&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -896,13 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/QueueEncoderThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/FfmpegCommandLine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="13" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
@@ -936,13 +901,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodeFailEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="29" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TrancodeCompleteEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="7" selection-start="230" selection-end="420" vertical-scroll-proportion="0.0">
@@ -957,36 +915,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/QueueEncoderThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="58" selection-start="2691" selection-end="2691" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="33" column="28" selection-start="1134" selection-end="1137" vertical-scroll-proportion="0.6910569">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodeFailEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="29" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="323" column="27" selection-start="11677" selection-end="11677" vertical-scroll-proportion="-3.625">
+        <state line="385" column="46" selection-start="13901" selection-end="13901" vertical-scroll-proportion="1.7321428">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1234#1250#0" expanded="true" />
             <element signature="e#2140#2156#0" expanded="true" />
             <element signature="e#5718#5733#0" expanded="true" />
             <element signature="e#8157#8165#0" expanded="true" />
-            <element signature="e#15492#15656#0" expanded="true" />
-            <element signature="e#15645#15646#0" expanded="true" />
-            <element signature="e#15689#15929#0" expanded="true" />
-            <element signature="e#15918#15919#0" expanded="true" />
+            <element signature="e#15478#15642#0" expanded="true" />
+            <element signature="e#15631#15632#0" expanded="true" />
+            <element signature="e#15675#15915#0" expanded="true" />
+            <element signature="e#15904#15905#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="167" selection-start="2390" selection-end="2390" vertical-scroll-proportion="0.8635514">
+        <state line="55" column="8" selection-start="1791" selection-end="1791" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="50" selection-start="2424" selection-end="2424" vertical-scroll-proportion="0.33216783">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

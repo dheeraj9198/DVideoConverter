@@ -47,6 +47,7 @@ public class FfmpegRunnable implements Runnable {
         try{
             conversionTask = conversionTasks.take();
             String command = conversionTask.getCommandToExecute();
+            outputFile = conversionTask.getOutPutFile();
             inputFile = conversionTask.getFileName();
             eventBus.post(new TranscodingFileEvent(inputFile));
             CommandLine cmdLine = CommandLine.parse(command);
@@ -60,9 +61,9 @@ public class FfmpegRunnable implements Runnable {
         {
             logger.error("caught exception "+e);
         }  finally {
-        File file = new File(outputFile);
+        File file = new File(outputFile.replace("\"",""));
         if (file.exists() && file.length() > 200) {
-            //transcode success
+            logger.error("FFMPEG CONVERSION SUCCESS FOR FILE " + outputFile);
             eventBus.post(new TrancodeCompleteEvent(inputFile));
         } else {
             logger.error("FFMPEG CONVERSION FAILED FOR FILE " + outputFile);

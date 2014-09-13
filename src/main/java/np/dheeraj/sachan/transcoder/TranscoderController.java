@@ -383,7 +383,7 @@ public class TranscoderController {
             browsedFolder = new File(file.getParent());
             String extension = FilenameUtils.getExtension(fileName).toLowerCase();
             if (Arrays.asList(allowedExts).contains(extension)) {
-                this.inputFileName = "\"" + fileName + "\"";
+                this.inputFileName = fileName;
                 selectPrimaryVideoButton.setText(file.getName());
                 logger.info("Primary file name" + fileName);
             } else {
