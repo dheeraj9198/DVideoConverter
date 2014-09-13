@@ -59,9 +59,9 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
     public String getCommandToExecute() {
         if(crfEnabled)
         {
-            return "C:\\Program Files\\DVideoConverter\\dheeraj.exe -i "+fileName+" -vcodec "+videoCodec+" -acodec "+audioCodec+" -b:a "+audioBitrate+"k -s " +frameSize+" -crf "+crf+" -y "+outPutFile;
+            return "\"C:\\Program Files\\DVideoConverter\\dheeraj.exe\" -i "+fileName+" -vcodec "+videoCodec+" -acodec "+audioCodec+" -b:a "+audioBitrate.replace(" ","")+"k -s " +frameSize+" -crf "+crf+" -y "+outPutFile;
         }   else{
-            return "C:\\Program Files\\DVideoConverter\\dheeraj.exe -i "+fileName+" -vcodec "+videoCodec+" -acodec "+audioCodec+" -b:a "+audioBitrate+"k -s " +frameSize+" -b:v "+videoBitrate+"k -y "+outPutFile;
+            return "\"C:\\Program Files\\DVideoConverter\\dheeraj.exe\" -i "+fileName+" -vcodec "+videoCodec+" -acodec "+audioCodec+" -b:a "+audioBitrate.replace(" ","")+"k -s " +frameSize+" -b:v "+videoBitrate+"k -y "+outPutFile;
         }
     }
 }

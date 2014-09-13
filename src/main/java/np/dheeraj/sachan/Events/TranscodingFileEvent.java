@@ -9,4 +9,13 @@ package np.dheeraj.sachan.Events;
  * To change this template use File | Settings | File Templates.
  */
 public class TranscodingFileEvent {
+    private String inPutFile;
+
+    public TranscodingFileEvent(String inPutFile) {
+        this.inPutFile = inPutFile;
+    }
+
+    public String getInPutFile() {
+        return inPutFile;
+    }
 }

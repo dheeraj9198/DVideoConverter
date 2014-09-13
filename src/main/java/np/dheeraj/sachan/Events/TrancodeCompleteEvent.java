@@ -9,13 +9,13 @@ package np.dheeraj.sachan.Events;
  * To change this template use File | Settings | File Templates.
  */
 public class TrancodeCompleteEvent {
-    private String outPutFile;
+    private String inPutFile;
 
-    public TrancodeCompleteEvent(String outPutFile) {
-        this.outPutFile = outPutFile;
+    public TrancodeCompleteEvent(String inPutFile) {
+        this.inPutFile = inPutFile;
     }
 
-    public String getOutPutFile() {
-        return outPutFile;
+    public String getInPutFile() {
+        return inPutFile;
     }
 }

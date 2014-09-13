@@ -2,6 +2,7 @@ package np.dheeraj.sachan.transcoder;
 import com.google.common.eventbus.EventBus;
 import np.dheeraj.sachan.Events.TrancodeCompleteEvent;
 import np.dheeraj.sachan.Events.TranscodeFailEvent;
+import np.dheeraj.sachan.Events.TranscodingFileEvent;
 import np.dheeraj.sachan.videoTranscoder.ExecLogHandler;
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
@@ -29,6 +30,7 @@ public class FfmpegRunnable implements Runnable {
     public FfmpegRunnable(ArrayBlockingQueue<ConversionTask> tasks,EventBus eventBus) {
         this.conversionTasks = tasks;
         this.eventBus = eventBus;
+        this.eventBus.register(this);
     }
 
     @Override
@@ -39,11 +41,14 @@ public class FfmpegRunnable implements Runnable {
         {
             throw new RuntimeException("tasks finished");
         }
-        String outputFile = null;
-        ConversionTask conversionTask;
+        String outputFile = "";
+        String inputFile = "";
+        ConversionTask conversionTask = null;
         try{
             conversionTask = conversionTasks.take();
             String command = conversionTask.getCommandToExecute();
+            inputFile = conversionTask.getFileName();
+            eventBus.post(new TranscodingFileEvent(inputFile));
             CommandLine cmdLine = CommandLine.parse(command);
             logger.info("Executing FFMPEG command " + command);
             DefaultExecutor executor = new DefaultExecutor();
@@ -58,11 +63,11 @@ public class FfmpegRunnable implements Runnable {
         File file = new File(outputFile);
         if (file.exists() && file.length() > 200) {
             //transcode success
-            eventBus.post(new TrancodeCompleteEvent(outputFile));
+            eventBus.post(new TrancodeCompleteEvent(inputFile));
         } else {
             logger.error("FFMPEG CONVERSION FAILED FOR FILE " + outputFile);
             //transocde failed
-            eventBus.post(new TranscodeFailEvent(outputFile));
+            eventBus.post(new TranscodeFailEvent(inputFile));
         }
     }
     }

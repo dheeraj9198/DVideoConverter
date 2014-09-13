@@ -163,7 +163,7 @@ public class TranscoderController {
 
     public void redirectHome(Stage stageLogin) {
         startButton.setDisable(true);
-        messageText.setFont(Font.font("Verdana",FontWeight.BOLD,15));
+        messageText.setFont(Font.font("Verdana", FontWeight.BOLD, 15));
         this.totalInQueueText.setText("" + totalInQueueInt);
         //check for update
         List<NameValuePair> postData = new ArrayList<NameValuePair>(1);
@@ -250,14 +250,12 @@ public class TranscoderController {
         extensionCombobox.setValue("mp4");
 
 
-        for(VideoCodec videoCodec : VideoCodec.values())
-        {
+        for (VideoCodec videoCodec : VideoCodec.values()) {
             videoCodecComboBox.getItems().addAll(videoCodec.name());
         }
         videoCodecComboBox.setValue(VideoCodec.H264.name());
 
-        for(AudioCodec audioCodec : AudioCodec.values())
-        {
+        for (AudioCodec audioCodec : AudioCodec.values()) {
             audioCodecComboBox.getItems().addAll(audioCodec.name());
         }
         audioCodecComboBox.setValue(AudioCodec.MP3.name());
@@ -277,7 +275,7 @@ public class TranscoderController {
             if (!primaryVideoBitrateComboBox.isDisabled()) {
                 primaryVideoBitrateComboBox.setDisable(true);
             }
-        }  else{
+        } else {
             if (!crfComboBox.isDisabled()) {
                 crfComboBox.setDisable(true);
             }
@@ -290,19 +288,17 @@ public class TranscoderController {
     @FXML
     protected void addInQueue(ActionEvent e) {
 
-        logger.info("input file "+inputFileName);
-        logger.info("output file "+outPutFileName);
+        logger.info("input file " + inputFileName);
+        logger.info("output file " + outPutFileName);
         logger.info(VideoCodec.getCodec(videoCodecComboBox.getValue()));
         logger.info(AudioCodec.getCodec(audioCodecComboBox.getValue()));
 
 
-        if(inputFileName == null )
-        {
+        if (inputFileName == null) {
             messageText.setFill(Color.RED);
             messageText.setText("No input file selected");
             return;
-        }else if(outPutFileName == null)
-        {
+        } else if (outPutFileName == null) {
             messageText.setFill(Color.RED);
             messageText.setText("No output file selected");
             return;
@@ -311,7 +307,7 @@ public class TranscoderController {
         ConversionTask conversionTask = new ConversionTask("\"" + inputFileName + "\"", primaryVideoBitrateComboBox.getValue().toString().replace("kbit/s", ""),
                 primaryAudioBitrateComboBox.getValue().toString().replace("kbit/s", ""),
                 primaryFrameSizeComboBox.getValue().toString(),
-                outPutFileName+"."+extensionCombobox.getValue()+"\"",crfComboBox.getValue(),crfBox.isSelected(),VideoCodec.getCodec(videoCodecComboBox.getValue()),AudioCodec.getCodec(audioCodecComboBox.getValue()));
+                outPutFileName + "." + extensionCombobox.getValue() + "\"", crfComboBox.getValue(), crfBox.isSelected(), VideoCodec.getCodec(videoCodecComboBox.getValue()), AudioCodec.getCodec(audioCodecComboBox.getValue()));
         try {
             if (videoConversionTaskQueue.add(conversionTask)) {
                 logger.info("Task successfully added in queue");
@@ -322,11 +318,11 @@ public class TranscoderController {
                 inputFileName = null;
                 outPutFileName = null;
                 totalInQueueInt++;
-                totalInQueueText.setText(totalInQueueInt+"");
-                if(totalInQueueInt > 0)
-                {
-                    if(startButton.isDisabled())
-                    {
+                totalInQueueText.setText(totalInQueueInt + "");
+                messageText.setFill(Color.GREEN);
+                messageText.setText("Added in queue");
+                if (totalInQueueInt > 0) {
+                    if (startButton.isDisabled()) {
                         startButton.setDisable(false);
                     }
                 }
@@ -342,7 +338,7 @@ public class TranscoderController {
     @FXML
     protected void handleStartButtonAction(ActionEvent event) {
         transcoderScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-        transcoderScheduledExecutorService.scheduleWithFixedDelay(new FfmpegRunnable(videoConversionTaskQueue,eventBus),1,1,TimeUnit.SECONDS);
+        transcoderScheduledExecutorService.scheduleWithFixedDelay(new FfmpegRunnable(videoConversionTaskQueue, eventBus), 1, 1, TimeUnit.SECONDS);
     }
 
     @FXML
@@ -362,7 +358,7 @@ public class TranscoderController {
             fileChooser.setInitialDirectory(browsedFolder);
         }
         File file = fileChooser.showSaveDialog(stage);
-        outPutFileName = "\""+file.getAbsolutePath();
+        outPutFileName = "\"" + file.getAbsolutePath();
     }
 
 
@@ -387,7 +383,7 @@ public class TranscoderController {
             browsedFolder = new File(file.getParent());
             String extension = FilenameUtils.getExtension(fileName).toLowerCase();
             if (Arrays.asList(allowedExts).contains(extension)) {
-                this.inputFileName = "\""+fileName+"\"";
+                this.inputFileName = "\"" + fileName + "\"";
                 selectPrimaryVideoButton.setText(file.getName());
                 logger.info("Primary file name" + fileName);
             } else {
@@ -454,18 +450,40 @@ public class TranscoderController {
     @Subscribe
     public void onTranscodingFile(TranscodingFileEvent event) {
         compressingFileNameText.setFill(Color.GREEN);
-        //update lecture status on webapp
-        List<NameValuePair> postData = new ArrayList<NameValuePair>(1);
+        messageText.setText("Conversion started for " + event.getInPutFile());
+        compressingFileNameText.setText(event.getInPutFile());
     }
 
 
     @Subscribe
     public void onTranscodeComplete(TrancodeCompleteEvent event) {
+        terminateTranscoderExecutorService();
+        messageText.setFill(Color.GREEN);
+        messageText.setText("Conversion complete for " + event.getInPutFile());
+        compressionsPendingText.setText(videoConversionTaskQueue.size() + "");
+
     }
 
 
     @Subscribe
     public void onTranscodeFail(TranscodeFailEvent event) {
+        terminateTranscoderExecutorService();
+        messageText.setFill(Color.RED);
+        messageText.setText("Conversion failed for " + event.getInPutFile());
+        compressionsPendingText.setText(videoConversionTaskQueue.size() + "");
+
+    }
+
+    private void terminateTranscoderExecutorService() {
+        if (videoConversionTaskQueue.isEmpty()) {
+            transcoderScheduledExecutorService.shutdownNow();
+            try {
+                transcoderScheduledExecutorService.awaitTermination(1, TimeUnit.SECONDS);
+            } catch (Exception e) {
+                logger.error("Caught exception while terminating executor " + e);
+            }
+            transcoderScheduledExecutorService = null;
+        }
 
     }
 
@@ -497,22 +515,18 @@ public class TranscoderController {
                     videoConversionTaskQueue.remove(conversionTask);
                     taskListComboBox.getItems().remove(taskListComboBox.getValue());
                     totalInQueueInt--;
-                    totalInQueueText.setText(totalInQueueInt+"");
-                    if(totalInQueueInt == 0)
-                    {
-                        if(!startButton.isDisabled())
-                        {
+                    totalInQueueText.setText(totalInQueueInt + "");
+                    if (totalInQueueInt == 0) {
+                        if (!startButton.isDisabled()) {
                             startButton.setDisable(true);
                         }
                     }
                 }
             }
 
-            if(videoConversionTaskQueue.isEmpty())
-            {
-                if(!removeFromQueueButton.isDisabled())
-                {
-                removeFromQueueButton.setDisable(true);
+            if (videoConversionTaskQueue.isEmpty()) {
+                if (!removeFromQueueButton.isDisabled()) {
+                    removeFromQueueButton.setDisable(true);
                 }
             }
         }
