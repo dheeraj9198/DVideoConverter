@@ -23,7 +23,6 @@
             GridPane.rowIndex="3"
             prefWidth="120.0" maxWidth="120.0"/>
 
-
     <Label text="Select Frame Size " GridPane.columnIndex="2" GridPane.rowIndex="3"/>
     <ComboBox fx:id="primaryFrameSizeComboBox" GridPane.columnIndex="3" GridPane.rowIndex="3" prefWidth="120.0"
               maxWidth="120.0"/>
@@ -44,7 +43,6 @@
     <ComboBox fx:id="primaryAudioBitrateComboBox" GridPane.columnIndex="3" GridPane.rowIndex="5" prefWidth="120.0"
               maxWidth="120.0"/>
 
-
     <Label text="Select Output File " GridPane.columnIndex="0" GridPane.rowIndex="6"/>
     <Button fx:id="outputFileButton" onAction="#selectOutputVideo" GridPane.columnIndex="1"
             GridPane.rowIndex="6" prefWidth="120.0" maxWidth="120.0"/>
@@ -53,8 +51,6 @@
     <ComboBox fx:id="extensionCombobox"  GridPane.columnIndex="3"
             GridPane.rowIndex="6" prefWidth="120.0" maxWidth="120.0"/>
 
-
-
     <Label text="Select Video Codec " GridPane.columnIndex="0" GridPane.rowIndex="7"/>
     <ComboBox fx:id="videoCodecComboBox" GridPane.columnIndex="1" GridPane.rowIndex="7" prefWidth="120.0"
               maxWidth="120.0"/>
@@ -62,9 +58,6 @@
     <Label text="Select Audio Codec " GridPane.columnIndex="2" GridPane.rowIndex="7"/>
     <ComboBox fx:id="audioCodecComboBox" GridPane.columnIndex="3" GridPane.rowIndex="7" prefWidth="120.0"
               maxWidth="120.0"/>
-
-
-
 
     <Label text="Add in queue" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
 
@@ -105,7 +98,7 @@
     <Text fx:id="compressingFileNameText" GridPane.columnIndex="1" GridPane.rowIndex="13" GridPane.columnSpan="3"/>
     <Label fx:id="compressionsPendingLabel" text="Tasks Pending" GridPane.columnIndex="0" GridPane.rowIndex="14"/>
     <Text fx:id="compressionsPendingText" GridPane.columnIndex="1" GridPane.rowIndex="14"/>
-    <Text fx:id="messageText" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="15"/>
+    <Text fx:id="messageText" GridPane.columnIndex="0" GridPane.rowIndex="15"/>
     <Text fx:id="updateText" GridPane.columnIndex="0" GridPane.rowIndex="16"/>
 
 </GridPane>

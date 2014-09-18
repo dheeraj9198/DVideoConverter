@@ -23,7 +23,7 @@ public class AppConfig {
 
 
     public static final String videoExtension  = ".mp4";
-    public static final String version = "n##t1";
+    public static final String version = "1.0-iteen";
 
     private String apiUrl;
     private String commonFolder;

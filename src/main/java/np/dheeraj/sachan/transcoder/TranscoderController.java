@@ -450,8 +450,8 @@ public class TranscoderController {
     @Subscribe
     public void onTranscodingFile(TranscodingFileEvent event) {
         compressingFileNameText.setFill(Color.GREEN);
-        messageText.setText("Conversion started for " + event.getInPutFile());
-        compressingFileNameText.setText(event.getInPutFile());
+        messageText.setText("Conversion started");
+        compressingFileNameText.setText(event.getInPutFile().substring(event.getInPutFile().length() > 30 ? event.getInPutFile().length() -30 :0));
     }
 
 
@@ -459,9 +459,8 @@ public class TranscoderController {
     public void onTranscodeComplete(TrancodeCompleteEvent event) {
         terminateTranscoderExecutorService();
         messageText.setFill(Color.GREEN);
-        messageText.setText("Conversion complete for " + event.getInPutFile());
+        messageText.setText("Conversion complete ");
         compressionsPendingText.setText(videoConversionTaskQueue.size() + "");
-
     }
 
 
@@ -469,7 +468,7 @@ public class TranscoderController {
     public void onTranscodeFail(TranscodeFailEvent event) {
         terminateTranscoderExecutorService();
         messageText.setFill(Color.RED);
-        messageText.setText("Conversion failed for " + event.getInPutFile());
+        messageText.setText("Conversion failed");
         compressionsPendingText.setText(videoConversionTaskQueue.size() + "");
 
     }
