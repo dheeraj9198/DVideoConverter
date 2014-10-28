@@ -42,6 +42,7 @@ public class TranscoderController {
     public volatile ArrayBlockingQueue<ConversionTask> videoConversionTaskQueue = new ArrayBlockingQueue<ConversionTask>(1000);
     private static final String selectcourse = "Select ...";
     private static final String selectFile = "Select File";
+    private static final String selectOutputFile = "Output File";
     private static final String chooseLecture = "Choose lecture to remove from queue";
     private static final String[] allowedExts = {"mp4", "flv", "webm", "f4v", "avi", "mkv", "wmv", "mov", "mpeg", "wav", "asf", "mjpeg", "m2p", "m4p", "mpg", "vob", "m2ts", "mts"};
     private static final String appName = "DVideoConverter";
@@ -178,7 +179,7 @@ public class TranscoderController {
         stage.setScene(scene);
         stage.hide();
         stage.show();
-        outputFileButton.setText("Output File");
+        outputFileButton.setText(selectOutputFile);
         String[] videoBitrateArray = {"50 kbit/s",
                 "75 kbit/s",
                 "100 kbit/s",
@@ -317,6 +318,8 @@ public class TranscoderController {
                 }
                 inputFileName = null;
                 outPutFileName = null;
+                selectPrimaryVideoButton.setText(selectFile);
+                outputFileButton.setText(selectOutputFile);
                 totalInQueueInt++;
                 totalInQueueText.setText(totalInQueueInt + "");
                 messageText.setFill(Color.GREEN);

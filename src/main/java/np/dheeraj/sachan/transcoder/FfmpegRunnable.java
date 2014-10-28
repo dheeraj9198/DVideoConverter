@@ -51,20 +51,20 @@ public class FfmpegRunnable implements Runnable {
             eventBus.post(new TranscodingFileEvent(inputFile));
             final CommandLine cmdLine = CommandLine.parse(command);
             logger.info("Executing FFMPEG command " + command);
-            final DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();
             final DefaultExecutor executor = new DefaultExecutor();
             PumpStreamHandler psh = new PumpStreamHandler(new ExecLogHandler(logger, Level.INFO)/*, new ExecLogHandler(logger, Level.ERROR)*/);
             executor.setStreamHandler(psh);
-            Executors.newSingleThreadExecutor().execute(new Runnable() {
-                @Override
-                public void run() {
+           // Executors.newSingleThreadExecutor().execute(new Runnable() {
+             //   @Override
+              //  public void run() {
                     try{
-                    executor.execute(cmdLine, resultHandler);
+                    executor.execute(cmdLine);
                     }catch (Exception e){
                         logger.error("INSIDE EXCEPTION " + e.getMessage());
                     }
-                }
-            });
+             //   }
+           // });
+            executor.wait();
             logger.info("(((((((((((((((((((((((((((((((((((((((((((((((((((((((((");
         } catch (Exception e) {
             logger.error("caught exception " + e);
