@@ -50,7 +50,7 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
 
     private static double getDuration(String fileName) {
         try {
-            ProcessBuilder pb = new ProcessBuilder("\"C:\\Program Files\\DVideoConverter\\dheeraj.exe\"", "-i", fileName);
+            ProcessBuilder pb = new ProcessBuilder("\"C:\\Program Files\\Common Files\\DVideoConverter\\dheeraj.exe\"", "-i", fileName);
             final Process p = pb.start();
             Scanner sc = new Scanner(p.getErrorStream());
             // Find duration
@@ -105,9 +105,9 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
 
     public String getCommandToExecute() {
         if (crfEnabled) {
-            return "\"C:\\Program Files\\DVideoConverter\\dheeraj.exe\" -i " + fileName + " -vcodec " + videoCodec + " -acodec " + audioCodec + " -b:a " + audioBitrate.replace(" ", "") + "k -s " + frameSize + " -crf " + crf + " -y " + outPutFile;
+            return "\"C:\\Program Files\\Common Files\\DVideoConverter\\dheeraj.exe\" -i " + fileName + " -vcodec " + videoCodec + " -acodec " + audioCodec + " -b:a " + audioBitrate.replace(" ", "") + "k -s " + frameSize + " -crf " + crf + " -y " + outPutFile;
         } else {
-            return "\"C:\\Program Files\\DVideoConverter\\dheeraj.exe\" -i " + fileName + " -vcodec " + videoCodec + " -acodec " + audioCodec + " -b:a " + audioBitrate.replace(" ", "") + "k -s " + frameSize + " -b:v " + videoBitrate.replace(" ", "") + "k -y " + outPutFile;
+            return "\"C:\\Program Files\\Common Files\\DVideoConverter\\dheeraj.exe\" -i " + fileName + " -vcodec " + videoCodec + " -acodec " + audioCodec + " -b:a " + audioBitrate.replace(" ", "") + "k -s " + frameSize + " -b:v " + videoBitrate.replace(" ", "") + "k -y " + outPutFile;
         }
     }
 }

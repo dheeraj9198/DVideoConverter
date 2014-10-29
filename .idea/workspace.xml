@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d24aa589-b671-4db4-89d2-7424522b6887" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nsis/pre_req/dheeraj.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nsis/DVideoConverter.exe" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nsis/pre_req/icon.ico" afterPath="$PROJECT_DIR$/nsis/pre_req/icon.ico" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nsis/DesktopTranscoder.nsi" afterPath="$PROJECT_DIR$/nsis/DesktopTranscoder.nsi" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="6ebaaa22-3f9c-4224-adba-39a38f02d846" name="New changelist" comment="">
@@ -11,7 +15,7 @@
     </list>
     <ignored path="DVideoConverter.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1414603942856" ignored="false" />
+    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1414605415630" ignored="false" />
     <file path="/transcoder.fxml" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1411057470990" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/App.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/AppConfig.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
@@ -22,7 +26,7 @@
     <file path="/a.dummy" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1411052809238" ignored="false" />
     <file path="/.gitignore" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410106730047" ignored="false" />
     <file path="$PROJECT_DIR$/.gitignore" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410106965423" ignored="true" />
-    <file path="/fragment.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410542237145" ignored="false" />
+    <file path="/fragment.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1414605318125" ignored="false" />
     <file path="/VideoCodec.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410552724585" ignored="false" />
     <file path="/AudioCodec.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1410552786982" ignored="false" />
     <file path="/FfmpegRunnable.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1414602724738" ignored="false" />
@@ -31,6 +35,9 @@
     <file path="/ExecLogHandler.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1414598397863" ignored="false" />
     <file path="/TranscodeStatusUpdateEvent.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1414595299982" ignored="false" />
     <file path="/MyLogOutPutStream.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1414602211341" ignored="false" />
+    <file path="/pom.xml" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1414605011361" ignored="false" />
+    <file path="/log4j.properties" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1414604557465" ignored="false" />
+    <file path="/DesktopTranscoder.nsi" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1414606528919" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,97 +98,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="DesktopTranscoder.nsi" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nsis/DesktopTranscoder.nsi">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="74" column="5" selection-start="2994" selection-end="2994" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConversionTask.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="87" selection-start="1647" selection-end="1647" vertical-scroll-proportion="-2.6295338">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="FfmpegRunnable.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="96" column="0" selection-start="3721" selection-end="3721" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#3813#3814#0" expanded="true" />
-                <element signature="e#4053#4248#0" expanded="true" />
-                <element signature="e#4229#4230#0" expanded="true" />
-                <element signature="e#4425#4665#0" expanded="true" />
-                <element signature="e#4650#4651#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConversionTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="25" selection-start="2405" selection-end="2405" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DesktopTranscoder.nsi" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nsis/DesktopTranscoder.nsi">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExecuteWatchdog.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-exec/1.1/commons-exec-1.1-sources.jar!/org/apache/commons/exec/ExecuteWatchdog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="11" selection-start="2809" selection-end="2809" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyLogOutPutStream.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/MyLogOutPutStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="12" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TranscoderController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="179" column="44" selection-start="6290" selection-end="6290" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1267#1283#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="transcoder.fxml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/transcoder.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="50" selection-start="4494" selection-end="4494" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1411057784826" expanded="true" signature="4066:4083" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/VideoConverter/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="1066" selection-end="1066" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -204,9 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/ForceAddEvent.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/VideoCodec.java" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/AudioCodec.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TrancodeCompleteEvent.java" />
@@ -215,11 +153,14 @@
         <option value="$PROJECT_DIR$/src/main/java/VideoConverter/AppConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/transcoder.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodeStatusUpdateEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" />
-        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/ExecLogHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/MyLogOutPutStream.java" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java" />
         <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/ExecLogHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" />
+        <option value="$PROJECT_DIR$/nsis/DesktopTranscoder.nsi" />
       </list>
     </option>
   </component>
@@ -243,7 +184,7 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="ExpressMediaUploader" />
+          <option name="myItemId" value="DVideoConverter" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -253,7 +194,39 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="ExpressMediaUploader" />
+          <option name="myItemId" value="DVideoConverter" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jfx" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="DVideoConverter" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="DVideoConverter" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -298,7 +271,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -390,6 +362,10 @@
               <option name="myItemId" value="sachan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="videoTranscoder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -431,7 +407,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="nsis" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sachan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -448,13 +436,10 @@
               <option name="myItemId" value="nsis" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pre_req" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -470,12 +455,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="TODO_SCOPE" value="Project Files" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -551,19 +536,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -590,6 +562,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -754,7 +739,11 @@
       <created>1414603945937</created>
       <updated>1414603945937</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="dheeraj.exe added">
+      <created>1414604237116</created>
+      <updated>1414604237116</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -779,7 +768,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -799,8 +788,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.47714603" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24679486" sideWeight="0.47714603" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.522854" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36431623" sideWeight="0.47714603" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.522854" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -850,7 +839,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="icon added" />
+    <option name="LAST_COMMIT_MESSAGE" value="dheeraj.exe added" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -874,6 +863,7 @@
     <MESSAGE value="update percentage tx completed" />
     <MESSAGE value="done" />
     <MESSAGE value="icon added" />
+    <MESSAGE value="dheeraj.exe added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -883,66 +873,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/jre/lib/jfxrt.jar!/javafx/scene/control/ProgressIndicator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="22" selection-start="1298" selection-end="1298" vertical-scroll-proportion="0.85714287">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-exec/1.1/commons-exec-1.1-sources.jar!/org/apache/commons/exec/PumpStreamHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="11" selection-start="1849" selection-end="1849" vertical-scroll-proportion="0.3320965">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/ExecLogHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="11" selection-start="686" selection-end="686" vertical-scroll-proportion="0.40898618">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/jre/lib/jfxrt.jar!/javafx/collections/ObservableList.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="24" selection-start="568" selection-end="568" vertical-scroll-proportion="0.40552995">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-exec/1.1/commons-exec-1.1-sources.jar!/org/apache/commons/exec/LogOutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="22" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-exec/1.1/commons-exec-1.1-sources.jar!/org/apache/commons/exec/ExecuteWatchdog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="11" selection-start="2809" selection-end="2809" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_45/src.zip!/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="960" column="23" selection-start="39803" selection-end="39803" vertical-scroll-proportion="0.5610599">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/transcoder.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="50" selection-start="4494" selection-end="4494" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1411057784826" expanded="true" signature="4066:4083" placeholder="{...}" />
-          </folding>
-        </state>
+        <state line="960" column="23" selection-start="39803" selection-end="39803" vertical-scroll-proportion="0.5610599" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/MyLogOutPutStream.java">
@@ -954,32 +887,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/VideoConverter/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="1066" selection-end="1066" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/DS.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/transcoder.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="50" selection-start="4494" selection-end="4494" vertical-scroll-proportion="0.4853801">
+          <folding>
+            <marker date="1411057784826" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="45" selection-start="528" selection-end="528" vertical-scroll-proportion="0.32949308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExpressMediaUploader.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="44" selection-start="6290" selection-end="6290" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1267#1283#0" expanded="true" />
-          </folding>
+        <state line="166" column="67" selection-start="5570" selection-end="5570" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/ExecLogHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="43" selection-start="673" selection-end="673" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/VideoConverter/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="28" selection-start="519" selection-end="519" vertical-scroll-proportion="0.27880183">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DVideoConverter.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="8" column="16" selection-start="402" selection-end="402" vertical-scroll-proportion="0.20584795">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nsis/pre_req/icon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java">
@@ -987,26 +958,20 @@
         <state line="96" column="0" selection-start="3721" selection-end="3721" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#3813#3814#0" expanded="true" />
-            <element signature="e#4053#4248#0" expanded="true" />
-            <element signature="e#4229#4230#0" expanded="true" />
-            <element signature="e#4425#4665#0" expanded="true" />
-            <element signature="e#4650#4651#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="25" selection-start="2405" selection-end="2405" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nsis/DesktopTranscoder.nsi">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="74" column="5" selection-start="2994" selection-end="2994" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="87" selection-start="1647" selection-end="1647" vertical-scroll-proportion="-2.6295338">
           <folding />
         </state>
       </provider>
