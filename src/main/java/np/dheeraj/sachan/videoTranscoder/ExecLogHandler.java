@@ -1,5 +1,8 @@
 package np.dheeraj.sachan.videoTranscoder;
 
+import com.google.common.eventbus.EventBus;
+import javafx.scene.control.ProgressBar;
+import np.dheeraj.sachan.Events.TranscodeStatusUpdateEvent;
 import org.apache.commons.exec.LogOutputStream;
 import org.apache.log4j.Level;
 import org.slf4j.Logger;
@@ -16,9 +19,18 @@ public class ExecLogHandler extends LogOutputStream {
     private String calc;
     int start = 0;
     private final String time = "time=";
-    public ExecLogHandler(Logger logger, Level level) {
+
+    private double totalDuration;
+    private EventBus eventBus;
+    private ProgressBar progressBar;
+
+    public ExecLogHandler(Logger logger, Level level,double duration,EventBus eventBus1,ProgressBar progressBar1) {
         super(level.toInt());
         this.logger = logger;
+        this.totalDuration =  duration;
+        this.eventBus = eventBus1;
+        this.progressBar = progressBar1;
+        this.eventBus.register(this);
     }
 
     @Override
@@ -32,19 +44,27 @@ public class ExecLogHandler extends LogOutputStream {
                 logger.error(line);
                 break;
         }*/
-        System.out.println("^^" + line);
+        //System.out.println("^^" + line);
     }
 
     @Override
     protected void processLine(String line) {
-        //logger.info(line);
+        logger.info(line);
         if(line.contains(time))
         {
             try{
                 start = line.lastIndexOf(time)+time.length();
-          calc = line.substring(start,start+12);
-          logger.info("*+*"+calc);
+                calc = line.substring(start,start+12);
                 //TODO got time here parse and convert to actual time in seconds and send realtime time events
+
+
+                String[] hms = calc.split(":");
+                Double duration = Integer.parseInt(hms[0]) * 3600
+                        + Integer.parseInt(hms[1]) * 60
+                        + Double.parseDouble(hms[2]);
+
+                eventBus.post(new TranscodeStatusUpdateEvent(duration/totalDuration));
+               // progressBar.setProgress(duration/totalDuration);
             }catch (Exception e){
                 logger.error("caught here "+e.getMessage());
             }

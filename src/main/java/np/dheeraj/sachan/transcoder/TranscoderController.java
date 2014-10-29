@@ -51,7 +51,7 @@ public class TranscoderController {
     private Stage stage;
     private static final Logger logger = LoggerFactory
             .getLogger(TranscoderController.class);
-    private static final EventBus eventBus = new EventBus();
+    private EventBus eventBus;
     private volatile String inputFileName = null;
     private volatile String outPutFileName = null;
     private ConcurrentHashMap<String, String> inputToOutputMap = new ConcurrentHashMap<String, String>();
@@ -148,6 +148,7 @@ public class TranscoderController {
     private ComboBox<String> extensionCombobox;
 
     public TranscoderController() {
+        eventBus= new EventBus();
         eventBus.register(this);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/transcoder.fxml"));
         fxmlLoader.setController(this);
@@ -341,7 +342,7 @@ public class TranscoderController {
     @FXML
     protected void handleStartButtonAction(ActionEvent event) {
         transcoderScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-        transcoderScheduledExecutorService.scheduleWithFixedDelay(new FfmpegRunnable(videoConversionTaskQueue, eventBus), 1, 1, TimeUnit.SECONDS);
+        transcoderScheduledExecutorService.scheduleWithFixedDelay(new FfmpegRunnable(videoConversionTaskQueue, eventBus,transcodeProgressBar), 1, 1, TimeUnit.SECONDS);
     }
 
     @FXML
@@ -451,6 +452,12 @@ public class TranscoderController {
     }
 
     @Subscribe
+    public void onTranscodeStatusUpdateEvent(TranscodeStatusUpdateEvent transcodeStatusUpdateEvent)
+    {
+        transcodeProgressBar.setProgress(transcodeStatusUpdateEvent.getPercent());
+    }
+
+    @Subscribe
     public void onTranscodingFile(TranscodingFileEvent event) {
         compressingFileNameText.setFill(Color.GREEN);
         messageText.setText("Conversion started");
@@ -464,6 +471,7 @@ public class TranscoderController {
         messageText.setFill(Color.GREEN);
         messageText.setText("Conversion complete ");
         compressionsPendingText.setText(videoConversionTaskQueue.size() + "");
+        transcodeProgressBar.setProgress(1.0);
     }
 
 
@@ -473,7 +481,7 @@ public class TranscoderController {
         messageText.setFill(Color.RED);
         messageText.setText("Conversion failed");
         compressionsPendingText.setText(videoConversionTaskQueue.size() + "");
-
+        transcodeProgressBar.setProgress(0.0);
     }
 
     private void terminateTranscoderExecutorService() {
