@@ -1,12 +1,10 @@
 package np.dheeraj.sachan.transcoder;
 
 import com.google.common.eventbus.EventBus;
+import com.google.common.eventbus.Subscribe;
 import javafx.application.Platform;
 import javafx.scene.control.ProgressBar;
-import np.dheeraj.sachan.Events.TrancodeCompleteEvent;
-import np.dheeraj.sachan.Events.TranscodeFailEvent;
-import np.dheeraj.sachan.Events.TranscodeStatusUpdateEvent;
-import np.dheeraj.sachan.Events.TranscodingFileEvent;
+import np.dheeraj.sachan.Events.*;
 import np.dheeraj.sachan.videoTranscoder.ExecLogHandler;
 import org.apache.commons.exec.*;
 import org.apache.log4j.Level;
@@ -33,11 +31,19 @@ public class FfmpegRunnable implements Runnable {
 
     private ScheduledExecutorService scheduledExecutorService;
 
+    private ExecuteWatchdog executeWatchdog = new ExecuteWatchdog(ExecuteWatchdog.INFINITE_TIMEOUT);
+
     public FfmpegRunnable(ArrayBlockingQueue<ConversionTask> tasks, EventBus eventBus,ProgressBar progressBar) {
         this.conversionTasks = tasks;
         this.txProgressBar = progressBar;
         this.eventBus = eventBus;
         this.eventBus.register(this);
+    }
+
+    @Subscribe
+    public void killAll(StopEverthingEvent stopEverthingEvent)
+    {
+        executeWatchdog.destroyProcess();
     }
 
     @Override
@@ -63,6 +69,7 @@ public class FfmpegRunnable implements Runnable {
             final DefaultExecutor executor = new DefaultExecutor();
             PumpStreamHandler psh = new PumpStreamHandler(new ExecLogHandlerInner(conversionTask.getDuration())/*, new ExecLogHandler(logger, Level.ERROR)*/);
             executor.setStreamHandler(psh);
+            executor.setWatchdog(executeWatchdog);
             try {
                 executor.execute(cmdLine);
             } catch (Exception e) {
@@ -83,11 +90,23 @@ public class FfmpegRunnable implements Runnable {
             File file = new File(outputFile.replace("\"", ""));
             if (file.exists() && file.length() > 200) {
                 logger.error("FFMPEG CONVERSION SUCCESS FOR FILE " + outputFile);
-                eventBus.post(new TrancodeCompleteEvent(inputFile));
+                final String test = inputFile;
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        eventBus.post(new TrancodeCompleteEvent(test));
+                    }
+                });
             } else {
                 logger.error("FFMPEG CONVERSION FAILED FOR FILE " + outputFile);
                 //transocde failed
-                eventBus.post(new TranscodeFailEvent(inputFile));
+                final String test = inputFile;
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        eventBus.post(new TranscodeFailEvent(test));
+                    }
+                });
             }
         }
     }
@@ -107,7 +126,7 @@ public class FfmpegRunnable implements Runnable {
         }
     }
 
-    public class ExecLogHandlerInner extends LogOutputStream {
+    public class ExecLogHandlerInner extends MyLogOutPutStream {
 
         private String calc;
         int start = 0;

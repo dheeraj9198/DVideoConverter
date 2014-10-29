@@ -347,7 +347,16 @@ public class TranscoderController {
 
     @FXML
     protected void handleStopButtonAction(ActionEvent event) {
-        onWindowClosed();
+        eventBus.post(new StopEverthingEvent());
+        try {
+            transcoderScheduledExecutorService.shutdownNow();
+            transcoderScheduledExecutorService.awaitTermination(1, TimeUnit.SECONDS);
+        } catch (Exception e) {
+            logger.error("Caught exception while terminating executor " + e);
+        }
+        transcoderScheduledExecutorService = null;
+        stage.close();
+        System.exit(0);
     }
 
     @FXML
@@ -367,7 +376,7 @@ public class TranscoderController {
 
 
     public void onWindowClosed() {
-        eventBus.post(new StopEverthingEvent());
+        handleStopButtonAction(new ActionEvent());
     }
 
 
@@ -471,6 +480,8 @@ public class TranscoderController {
         messageText.setFill(Color.GREEN);
         messageText.setText("Conversion complete ");
         compressionsPendingText.setText(videoConversionTaskQueue.size() + "");
+        totalInQueueInt--;
+        totalInQueueText.setText("" + ((totalInQueueInt > -1) ? totalInQueueInt : 0) );
         transcodeProgressBar.setProgress(1.0);
     }
 
@@ -481,11 +492,14 @@ public class TranscoderController {
         messageText.setFill(Color.RED);
         messageText.setText("Conversion failed");
         compressionsPendingText.setText(videoConversionTaskQueue.size() + "");
+        totalInQueueInt--;
+        totalInQueueText.setText("" + ((totalInQueueInt > -1) ? totalInQueueInt : 0));
         transcodeProgressBar.setProgress(0.0);
     }
 
     private void terminateTranscoderExecutorService() {
         if (videoConversionTaskQueue.isEmpty()) {
+            onQueuecompleteEvent();
             transcoderScheduledExecutorService.shutdownNow();
             try {
                 transcoderScheduledExecutorService.awaitTermination(1, TimeUnit.SECONDS);
@@ -497,7 +511,8 @@ public class TranscoderController {
 
     }
 
-    public void onQueuecompleteEvent(TranscodeQueueCompleteEvent event) {
+    public void onQueuecompleteEvent() {
+        taskListComboBox.getItems().removeAll(taskListComboBox.getItems());
         this.transcodePendingJobNumberInQueue = 0;
         if (this.taskListComboBox.isDisable()) {
             this.taskListComboBox.setDisable(false);
