@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBoxBuilder;
 import javafx.scene.paint.Color;
@@ -176,6 +177,7 @@ public class TranscoderController {
         this.stage.resizableProperty().setValue(Boolean.FALSE);
         selectPrimaryVideoButton.setText(selectFile);
         this.removeFromQueueButton.setDisable(true);
+        stage.getIcons().add(new Image("DS.png"));
         stage.setTitle(appName + "--" + appConfig.getVersion());
         stage.setScene(scene);
         stage.hide();
