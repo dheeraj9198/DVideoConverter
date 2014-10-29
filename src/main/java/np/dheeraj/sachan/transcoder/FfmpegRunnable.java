@@ -140,7 +140,7 @@ public class FfmpegRunnable implements Runnable {
                 try{
                     start = line.lastIndexOf(time)+time.length();
                     calc = line.substring(start,start+12);
-                    //TODO got time here parse and convert to actual time in seconds and send realtime time events
+                    // got time here parse and convert to actual time in seconds and send realtime time events
 
 
                     String[] hms = calc.split(":");

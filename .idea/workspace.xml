@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d24aa589-b671-4db4-89d2-7424522b6887" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/Events/TranscodeStatusUpdateEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/ConversionTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/ExecLogHandler.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/videoTranscoder/ExecLogHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" afterPath="$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/TranscoderController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="6ebaaa22-3f9c-4224-adba-39a38f02d846" name="New changelist" comment="">
@@ -14,7 +10,7 @@
     </list>
     <ignored path="DVideoConverter.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1414593217743" ignored="false" />
+    <file path="/Dummy.txt" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1414599570471" ignored="false" />
     <file path="/transcoder.fxml" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1411057470990" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/App.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/DesktopTranscoder/DesktopTranscoder/AppConfig.java" changelist="d24aa589-b671-4db4-89d2-7424522b6887" time="1407052852054" ignored="false" />
@@ -96,7 +92,7 @@
       <file leaf-file-name="FfmpegRunnable.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="85" selection-start="4063" selection-end="4063" vertical-scroll-proportion="-0.23391813">
+            <state line="142" column="22" selection-start="5120" selection-end="5120" vertical-scroll-proportion="0.74385965">
               <folding>
                 <element signature="e#3854#4094#0" expanded="true" />
                 <element signature="e#4079#4080#0" expanded="true" />
@@ -683,7 +679,11 @@
       <created>1414511100018</created>
       <updated>1414511100018</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="update percentage tx completed">
+      <created>1414599576919</created>
+      <updated>1414599576919</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -779,7 +779,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="realtime time events" />
+    <option name="LAST_COMMIT_MESSAGE" value="update percentage tx completed" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -800,6 +800,7 @@
     <MESSAGE value="converter implemented&#10;" />
     <MESSAGE value="real time logging first step" />
     <MESSAGE value="realtime time events" />
+    <MESSAGE value="update percentage tx completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -914,7 +915,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/np/dheeraj/sachan/transcoder/FfmpegRunnable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="85" selection-start="4063" selection-end="4063" vertical-scroll-proportion="-0.23391813">
+        <state line="142" column="22" selection-start="5120" selection-end="5120" vertical-scroll-proportion="0.74385965">
           <folding>
             <element signature="e#3854#4094#0" expanded="true" />
             <element signature="e#4079#4080#0" expanded="true" />
