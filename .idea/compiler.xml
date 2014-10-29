@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="DVideoConverter" />
         <module name="ExpressMediaUploader" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="DVideoConverter" target="1.6" />
       <module name="ExpressMediaUploader" target="1.6" />
     </bytecodeTargetLevel>
   </component>
