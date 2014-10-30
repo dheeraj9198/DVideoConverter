@@ -5,12 +5,18 @@
 # name of the installer
 OutFile "DVideoConverter.exe"
 
+
+
+
 #output dir
 InstallDir "C:\Program Files\${APP_NAME}"
 !define COMMON_FOLDER "C:\Program Files\Common Files\${APP_NAME}"
 
 # default section start
 Section
+
+MessageBox MB_OK "This program needs Java Runtime Environment"
+
 #set outputpath
 SetOutPath "${COMMON_FOLDER}"
 File "pre_req\dheeraj.exe"
