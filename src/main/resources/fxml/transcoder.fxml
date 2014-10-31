@@ -16,6 +16,10 @@
     </padding>
     <!-- <Text fx:id="welcomeText" text="home" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
  -->
+    <Label text="Video Compression" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <CheckBox fx:id="videoModeCheckBox" onAction="#videoMode" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER"/>
+    <Label text="Image Compression" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+    <CheckBox fx:id="imageModeCheckBox" onAction="#imageMode" GridPane.rowIndex="2" GridPane.columnIndex="3" GridPane.halignment="CENTER"/>
 
     <Label text="Select File" GridPane.columnIndex="0" GridPane.rowIndex="3">
     </Label>

@@ -26,11 +26,12 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
     private boolean crfEnabled;
     private String videoCodec;
     private String audioCodec;
+    private boolean isVideo;
 
     private double duration;
 
 
-    public ConversionTask(String fileName, String videoBitrate, String audioBitrate, String frameSize, String outPutFile, String crf, boolean crfEnabled, String videoCodec, String audioCodec) {
+    public ConversionTask(String fileName, String videoBitrate, String audioBitrate, String frameSize, String outPutFile, String crf, boolean crfEnabled, String videoCodec, String audioCodec, boolean isvid) {
         this.fileName = fileName;
         this.videoBitrate = videoBitrate;
         this.audioBitrate = audioBitrate;
@@ -40,11 +41,11 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
         this.crfEnabled = crfEnabled;
         this.videoCodec = videoCodec;
         this.audioCodec = audioCodec;
+        this.isVideo = isvid;
         this.duration = getDuration(fileName);
     }
 
-    public double getDuration()
-    {
+    public double getDuration() {
         return duration;
     }
 
@@ -104,10 +105,14 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
     }
 
     public String getCommandToExecute() {
-        if (crfEnabled) {
-            return "\"C:\\Program Files\\Common Files\\DVideoConverter\\dheeraj.exe\" -i " + fileName + " -vcodec " + videoCodec + " -acodec " + audioCodec + " -b:a " + audioBitrate.replace(" ", "") + "k -s " + frameSize + " -crf " + crf + " -y " + outPutFile;
+        if (isVideo) {
+            if (crfEnabled) {
+                return "\"C:\\Program Files\\Common Files\\DVideoConverter\\dheeraj.exe\" -i " + fileName + " -vcodec " + videoCodec + " -acodec " + audioCodec + " -b:a " + audioBitrate.replace(" ", "") + "k -s " + frameSize + " -crf " + crf + " -y " + outPutFile;
+            } else {
+                return "\"C:\\Program Files\\Common Files\\DVideoConverter\\dheeraj.exe\" -i " + fileName + " -vcodec " + videoCodec + " -acodec " + audioCodec + " -b:a " + audioBitrate.replace(" ", "") + "k -s " + frameSize + " -b:v " + videoBitrate.replace(" ", "") + "k -y " + outPutFile;
+            }
         } else {
-            return "\"C:\\Program Files\\Common Files\\DVideoConverter\\dheeraj.exe\" -i " + fileName + " -vcodec " + videoCodec + " -acodec " + audioCodec + " -b:a " + audioBitrate.replace(" ", "") + "k -s " + frameSize + " -b:v " + videoBitrate.replace(" ", "") + "k -y " + outPutFile;
+            return "\"C:\\Program Files\\Common Files\\DVideoConverter\\dheeraj.exe\" -i " + fileName + " -y -s "+frameSize+" " + outPutFile;
         }
     }
 }

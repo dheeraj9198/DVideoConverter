@@ -45,7 +45,8 @@ public class TranscoderController {
     private static final String selectFile = "Select File";
     private static final String selectOutputFile = "Output File";
     private static final String chooseLecture = "Choose lecture to remove from queue";
-    private static final String[] allowedExts = {"mp4", "flv", "webm", "f4v", "avi", "mkv", "wmv", "mov", "mpeg", "wav", "asf", "mjpeg", "m2p", "m4p", "mpg", "vob", "m2ts", "mts"};
+    private static final String[] allowedVideoExts = {"mp4", "flv", "webm", "f4v", "avi", "mkv", "wmv", "mov", "mpeg", "wav", "asf", "mjpeg", "m2p", "m4p", "mpg", "vob", "m2ts", "mts"};
+    private static final String[] allowedImageExts = {"jpg", "png"};
     private static final String appName = "DVideoConverter";
     private Parent parent;
     private Scene scene;
@@ -63,6 +64,11 @@ public class TranscoderController {
     private volatile int totalInQueueInt = 0;
     private ScheduledExecutorService transcoderScheduledExecutorService;
 
+
+    @FXML
+    private CheckBox videoModeCheckBox;
+    @FXML
+    private CheckBox imageModeCheckBox;
     @FXML
     private Text welcomeText;
     @FXML
@@ -149,7 +155,7 @@ public class TranscoderController {
     private ComboBox<String> extensionCombobox;
 
     public TranscoderController() {
-        eventBus= new EventBus();
+        eventBus = new EventBus();
         eventBus.register(this);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/transcoder.fxml"));
         fxmlLoader.setController(this);
@@ -165,6 +171,8 @@ public class TranscoderController {
     }
 
     public void redirectHome(Stage stageLogin) {
+        videoModeCheckBox.setSelected(true);
+        imageModeCheckBox.setSelected(false);
         startButton.setDisable(true);
         messageText.setFont(Font.font("Verdana", FontWeight.BOLD, 15));
         this.totalInQueueText.setText("" + totalInQueueInt);
@@ -271,6 +279,46 @@ public class TranscoderController {
     }
 
     @FXML
+    private void videoMode(ActionEvent actionEvent) {
+        if (videoModeCheckBox.isSelected()) {
+            imageModeCheckBox.setSelected(false);
+        } else {
+            imageModeCheckBox.setSelected(true);
+        }
+        videoImageModeSettings();
+    }
+
+    @FXML
+    private void imageMode(ActionEvent actionEvent) {
+        if (imageModeCheckBox.isSelected()) {
+            videoModeCheckBox.setSelected(false);
+        } else {
+            videoModeCheckBox.setSelected(true);
+        }
+        videoImageModeSettings();
+    }
+
+    private void videoImageModeSettings()
+    {
+        if(!videoModeCheckBox.isSelected())
+        {
+            crfBox.setDisable(true);
+            primaryVideoBitrateComboBox.setDisable(true);
+            primaryAudioBitrateComboBox.setDisable(true);
+            extensionCombobox.setDisable(true);
+            videoCodecComboBox.setDisable(true);
+            audioCodecComboBox.setDisable(true);
+        }else{
+            crfBox.setDisable(false);
+            primaryVideoBitrateComboBox.setDisable(false);
+            primaryAudioBitrateComboBox.setDisable(false);
+            extensionCombobox.setDisable(false);
+            videoCodecComboBox.setDisable(false);
+            audioCodecComboBox.setDisable(false);
+        }
+    }
+
+    @FXML
     protected void crfCheckBoxActionListener(ActionEvent event) {
         if (crfBox.isSelected()) {
             if (crfComboBox.isDisabled()) {
@@ -311,7 +359,7 @@ public class TranscoderController {
         ConversionTask conversionTask = new ConversionTask("\"" + inputFileName + "\"", primaryVideoBitrateComboBox.getValue().toString().replace("kbit/s", ""),
                 primaryAudioBitrateComboBox.getValue().toString().replace("kbit/s", ""),
                 primaryFrameSizeComboBox.getValue().toString(),
-                outPutFileName + "." + extensionCombobox.getValue() + "\"", crfComboBox.getValue(), crfBox.isSelected(), VideoCodec.getCodec(videoCodecComboBox.getValue()), AudioCodec.getCodec(audioCodecComboBox.getValue()));
+                outPutFileName + "." + (videoModeCheckBox.isSelected() ? extensionCombobox.getValue() : "jpg") + "\"", crfComboBox.getValue(), crfBox.isSelected(), VideoCodec.getCodec(videoCodecComboBox.getValue()), AudioCodec.getCodec(audioCodecComboBox.getValue()),videoModeCheckBox.isSelected());
         try {
             if (videoConversionTaskQueue.add(conversionTask)) {
                 logger.info("Task successfully added in queue");
@@ -344,7 +392,7 @@ public class TranscoderController {
     @FXML
     protected void handleStartButtonAction(ActionEvent event) {
         transcoderScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-        transcoderScheduledExecutorService.scheduleWithFixedDelay(new FfmpegRunnable(videoConversionTaskQueue, eventBus,transcodeProgressBar), 1, 1, TimeUnit.SECONDS);
+        transcoderScheduledExecutorService.scheduleWithFixedDelay(new FfmpegRunnable(videoConversionTaskQueue, eventBus, transcodeProgressBar), 1, 1, TimeUnit.SECONDS);
     }
 
     @FXML
@@ -397,25 +445,48 @@ public class TranscoderController {
             String fileName = file.getAbsolutePath();
             browsedFolder = new File(file.getParent());
             String extension = FilenameUtils.getExtension(fileName).toLowerCase();
-            if (Arrays.asList(allowedExts).contains(extension)) {
-                this.inputFileName = fileName;
-                selectPrimaryVideoButton.setText(file.getName());
-                logger.info("Primary file name" + fileName);
+
+            if (videoModeCheckBox.isSelected()) {
+                if (Arrays.asList(allowedVideoExts).contains(extension)) {
+                    this.inputFileName = fileName;
+                    selectPrimaryVideoButton.setText(file.getName());
+                    logger.info("Primary file name" + fileName);
+                } else {
+                    showErrorPopup(fileName, file);
+                }
             } else {
-                showErrorPopup(fileName, file);
+                if (Arrays.asList(allowedImageExts).contains(extension)) {
+                    this.inputFileName = fileName;
+                    selectPrimaryVideoButton.setText(file.getName());
+                    logger.info("Primary file name" + fileName);
+                } else {
+                    showErrorPopup(fileName, file);
+                }
             }
         } catch (Exception e1) {
             logger.info("Caught exception " + e1.getMessage());
         }
     }
 
-    private String getAllowedExts() {
+    private String getAllowedVideoExts() {
         String test = "";
-        for (int i = 0; i < allowedExts.length; i++) {
-            if (i == allowedExts.length - 1) {
-                test = test + allowedExts[i];
+        for (int i = 0; i < allowedVideoExts.length; i++) {
+            if (i == allowedVideoExts.length - 1) {
+                test = test + allowedVideoExts[i];
             } else {
-                test = test + allowedExts[i] + ",";
+                test = test + allowedVideoExts[i] + ",";
+            }
+        }
+        return test;
+    }
+
+    private String getAllowedImageExts() {
+        String test = "";
+        for (int i = 0; i < allowedImageExts.length; i++) {
+            if (i == allowedImageExts.length - 1) {
+                test = test + allowedImageExts[i];
+            } else {
+                test = test + allowedImageExts[i] + ",";
             }
         }
         return test;
@@ -431,7 +502,7 @@ public class TranscoderController {
     private void showErrorPopup(final String fileName, final File file) {
         final Stage dialogStage = new Stage();
         dialogStage.setTitle("Error");
-        Text text = new Text("Allowed file types are " + getAllowedExts());
+        Text text = new Text("Allowed file types are " + (videoModeCheckBox.isSelected() ? getAllowedVideoExts() : getAllowedImageExts()));
         text.setFont(Font.font(null, FontWeight.SEMI_BOLD, 20));
         text.setFill(Color.BLACK);
 
@@ -463,8 +534,7 @@ public class TranscoderController {
     }
 
     @Subscribe
-    public void onTranscodeStatusUpdateEvent(TranscodeStatusUpdateEvent transcodeStatusUpdateEvent)
-    {
+    public void onTranscodeStatusUpdateEvent(TranscodeStatusUpdateEvent transcodeStatusUpdateEvent) {
         transcodeProgressBar.setProgress(transcodeStatusUpdateEvent.getPercent());
     }
 
@@ -472,7 +542,7 @@ public class TranscoderController {
     public void onTranscodingFile(TranscodingFileEvent event) {
         compressingFileNameText.setFill(Color.GREEN);
         messageText.setText("Conversion started");
-        compressingFileNameText.setText(event.getInPutFile().substring(event.getInPutFile().length() > 30 ? event.getInPutFile().length() -30 :0));
+        compressingFileNameText.setText(event.getInPutFile().substring(event.getInPutFile().length() > 30 ? event.getInPutFile().length() - 30 : 0));
     }
 
 
@@ -483,7 +553,7 @@ public class TranscoderController {
         messageText.setText("Conversion complete ");
         compressionsPendingText.setText(videoConversionTaskQueue.size() + "");
         totalInQueueInt--;
-        totalInQueueText.setText("" + ((totalInQueueInt > -1) ? totalInQueueInt : 0) );
+        totalInQueueText.setText("" + ((totalInQueueInt > -1) ? totalInQueueInt : 0));
         transcodeProgressBar.setProgress(1.0);
     }
 
