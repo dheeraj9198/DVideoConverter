@@ -186,7 +186,7 @@ public class TranscoderController {
         selectPrimaryVideoButton.setText(selectFile);
         this.removeFromQueueButton.setDisable(true);
         stage.getIcons().add(new Image("DS.png"));
-        stage.setTitle(appName + "--" + appConfig.getVersion());
+        stage.setTitle(appName + "--" + appConfig.version);
         stage.setScene(scene);
         stage.hide();
         stage.show();

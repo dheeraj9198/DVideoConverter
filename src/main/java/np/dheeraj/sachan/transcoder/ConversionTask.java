@@ -1,5 +1,6 @@
 package np.dheeraj.sachan.transcoder;
 
+import VideoConverter.App;
 import VideoConverter.AppConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,7 +53,7 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
 
     private static double getDuration(String fileName) {
         try {
-            ProcessBuilder pb = new ProcessBuilder("\"C:\\Program Files\\Common Files\\DVideoConverter\\dheeraj.exe\"", "-i", fileName);
+            ProcessBuilder pb = new ProcessBuilder(AppConfig.getFfmpegPath(), "-i", fileName);
             final Process p = pb.start();
             Scanner sc = new Scanner(p.getErrorStream());
             // Find duration

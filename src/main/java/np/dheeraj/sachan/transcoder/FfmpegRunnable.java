@@ -5,14 +5,18 @@ import com.google.common.eventbus.Subscribe;
 import javafx.application.Platform;
 import javafx.scene.control.ProgressBar;
 import np.dheeraj.sachan.Events.*;
-import np.dheeraj.sachan.videoTranscoder.ExecLogHandler;
-import org.apache.commons.exec.*;
-import org.apache.log4j.Level;
+import org.apache.commons.exec.CommandLine;
+import org.apache.commons.exec.DefaultExecutor;
+import org.apache.commons.exec.ExecuteWatchdog;
+import org.apache.commons.exec.PumpStreamHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.util.concurrent.*;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA.
@@ -120,8 +124,8 @@ public class FfmpegRunnable implements Runnable {
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-                    eventBus.register(this);
-                    eventBus.post(new TranscodeStatusUpdateEvent(progressPecentage));                }
+                    eventBus.post(new TranscodeStatusUpdateEvent(progressPecentage));
+                }
             });
         }
     }
