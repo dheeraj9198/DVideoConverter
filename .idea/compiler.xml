@@ -22,8 +22,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="DVideoConverter" />
         <module name="ExpressMediaUploader" />
+      </profile>
+      <profile default="false" name="Annotation profile for DVideoConverter" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="DVideoConverter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -32,4 +38,3 @@
     </bytecodeTargetLevel>
   </component>
 </project>
-

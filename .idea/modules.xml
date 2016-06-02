@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DVideoConverter.iml" filepath="$PROJECT_DIR$/DVideoConverter.iml" />
       <module fileurl="file://$PROJECT_DIR$/ExpressMediaUploader.iml" filepath="$PROJECT_DIR$/ExpressMediaUploader.iml" />
     </modules>
   </component>
 </project>
-

@@ -33,9 +33,9 @@ public class AppConfig {
       return commonFolder + File.separator + "AurusTemp" +File.separator;
     }
 
-    public String getFfmpegPath()
+    public static String getFfmpegPath()
     {
-      return "\""+commonFolder +File.separator + "dheeraj.exe\"";
+      return "\"dheeraj.exe\"";
     }
 
     public String getVersion()

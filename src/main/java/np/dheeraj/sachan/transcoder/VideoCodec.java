@@ -8,6 +8,7 @@ package np.dheeraj.sachan.transcoder;
  * To change this template use File | Settings | File Templates.
  */
 public enum VideoCodec {
+    H265("libx265"),
     H264("libx264"),
     MPEG2("mpeg2video"),
     MPEG4("mpeg4");

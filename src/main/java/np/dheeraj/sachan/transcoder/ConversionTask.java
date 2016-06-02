@@ -1,5 +1,6 @@
 package np.dheeraj.sachan.transcoder;
 
+import VideoConverter.AppConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -107,12 +108,12 @@ public class ConversionTask implements Comparable, Serializable, Cloneable {
     public String getCommandToExecute() {
         if (isVideo) {
             if (crfEnabled) {
-                return "\"C:\\Program Files\\Common Files\\DVideoConverter\\dheeraj.exe\" -i " + fileName + " -vcodec " + videoCodec + " -acodec " + audioCodec + " -b:a " + audioBitrate.replace(" ", "") + "k -s " + frameSize + " -crf " + crf + " -y " + outPutFile;
+                return AppConfig.getFfmpegPath()+" -i " + fileName + " -vcodec " + videoCodec + " -acodec " + audioCodec + " -b:a " + audioBitrate.replace(" ", "") + "k -s " + frameSize + " -crf " + crf + " -y " + outPutFile;
             } else {
-                return "\"C:\\Program Files\\Common Files\\DVideoConverter\\dheeraj.exe\" -i " + fileName + " -vcodec " + videoCodec + " -acodec " + audioCodec + " -b:a " + audioBitrate.replace(" ", "") + "k -s " + frameSize + " -b:v " + videoBitrate.replace(" ", "") + "k -y " + outPutFile;
+                return AppConfig.getFfmpegPath()+" -i " + fileName + " -vcodec " + videoCodec + " -acodec " + audioCodec + " -b:a " + audioBitrate.replace(" ", "") + "k -s " + frameSize + " -b:v " + videoBitrate.replace(" ", "") + "k -y " + outPutFile;
             }
         } else {
-            return "\"C:\\Program Files\\Common Files\\DVideoConverter\\dheeraj.exe\" -i " + fileName + " -y -s "+frameSize+" " + outPutFile;
+            return AppConfig.getFfmpegPath()+" -i " + fileName + " -y -s "+frameSize+" " + outPutFile;
         }
     }
 }

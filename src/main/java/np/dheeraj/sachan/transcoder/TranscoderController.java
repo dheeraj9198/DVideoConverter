@@ -259,7 +259,7 @@ public class TranscoderController {
 
         String[] extensionArray = {"mkv", "mp4"};
         extensionCombobox.getItems().addAll(extensionArray);
-        extensionCombobox.setValue("mp4");
+        extensionCombobox.setValue("mkv");
 
 
         for (VideoCodec videoCodec : VideoCodec.values()) {
